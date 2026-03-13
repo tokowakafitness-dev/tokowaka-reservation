@@ -299,30 +299,40 @@ var selSlot     = null; // 選択中のスロット
 var weekOffset  = 0;    // 何週先を表示中か（0=今週）
 var currentScreen = 'sc1';
 
-// ── JSONP呼び出し ──
+// ── JSONP呼び出し（GAS対応・Safari/Chrome/LINE全対応）──
 function gasCall(action, params, onSuccess, onError) {
   var cbName = '_cb_' + Date.now() + '_' + Math.floor(Math.random()*9999);
-  var qs = 'action=' + encodeURIComponent(action) + '&callback=' + cbName;
+  var qs = 'action=' + encodeURIComponent(action) + '&callback=' + encodeURIComponent(cbName);
   if (params) qs += '&params=' + encodeURIComponent(JSON.stringify(params));
+
   var done = false;
   var timer = setTimeout(function(){
-    if (!done) { done=true; delete window[cbName]; onError && onError(new Error('タイムアウトしました。通信環境をご確認ください。')); }
+    if (done) return; done = true;
+    cleanup();
+    onError && onError(new Error('タイムアウトしました。通信環境をご確認ください。'));
   }, 30000);
-  window[cbName] = function(data) {
-    if (done) return; done=true; clearTimeout(timer);
+
+  function cleanup() {
     delete window[cbName];
-    var s = document.getElementById('_js_'+cbName);
-    if (s) s.parentNode.removeChild(s);
+    var s = document.getElementById('_js_' + cbName);
+    if (s && s.parentNode) s.parentNode.removeChild(s);
+  }
+
+  window[cbName] = function(data) {
+    if (done) return; done = true;
+    clearTimeout(timer); cleanup();
     if (data && data.error) onError && onError(new Error(data.error));
     else onSuccess && onSuccess(data);
   };
+
   var script = document.createElement('script');
-  script.id  = '_js_' + cbName;
-  script.src = GAS_URL + '?' + qs;
+  script.id   = '_js_' + cbName;
+  script.src  = GAS_URL + '?' + qs;
+  script.async = true;
   script.onerror = function() {
-    if (done) return; done=true; clearTimeout(timer);
-    delete window[cbName]; this.parentNode.removeChild(this);
-    onError && onError(new Error('通信エラーが発生しました。しばらくしてから再度お試しください。'));
+    if (done) return; done = true;
+    clearTimeout(timer); cleanup();
+    onError && onError(new Error('通信エラーが発生しました。ページを再読み込みしてお試しください。'));
   };
   document.head.appendChild(script);
 }
@@ -332,8 +342,9 @@ function warmup() {
   var cb = '_wu_' + Date.now();
   window[cb] = function(){ delete window[cb]; };
   var s = document.createElement('script');
-  s.src = GAS_URL + '?action=ping&callback=' + cb;
-  s.onerror = function(){ delete window[cb]; this.parentNode.removeChild(this); };
+  s.src = GAS_URL + '?action=ping&callback=' + encodeURIComponent(cb);
+  s.async = true;
+  s.onerror = function(){ delete window[cb]; if(s.parentNode) s.parentNode.removeChild(s); };
   document.head.appendChild(s);
 }
 
