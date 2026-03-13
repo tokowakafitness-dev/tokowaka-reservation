@@ -299,53 +299,44 @@ var selSlot     = null; // 選択中のスロット
 var weekOffset  = 0;    // 何週先を表示中か（0=今週）
 var currentScreen = 'sc1';
 
-// ── JSONP呼び出し（GAS対応・Safari/Chrome/LINE全対応）──
+// ── fetch方式（Chrome ORB対策・redirect:follow）──
 function gasCall(action, params, onSuccess, onError) {
-  var cbName = '_cb_' + Date.now() + '_' + Math.floor(Math.random()*9999);
-  var qs = 'action=' + encodeURIComponent(action) + '&callback=' + encodeURIComponent(cbName);
+  var qs = 'action=' + encodeURIComponent(action);
   if (params) qs += '&params=' + encodeURIComponent(JSON.stringify(params));
+  var url = GAS_URL + '?' + qs;
 
-  var done = false;
+  var timedOut = false;
   var timer = setTimeout(function(){
-    if (done) return; done = true;
-    cleanup();
+    timedOut = true;
     onError && onError(new Error('タイムアウトしました。通信環境をご確認ください。'));
   }, 30000);
 
-  function cleanup() {
-    delete window[cbName];
-    var s = document.getElementById('_js_' + cbName);
-    if (s && s.parentNode) s.parentNode.removeChild(s);
-  }
-
-  window[cbName] = function(data) {
-    if (done) return; done = true;
-    clearTimeout(timer); cleanup();
-    if (data && data.error) onError && onError(new Error(data.error));
-    else onSuccess && onSuccess(data);
-  };
-
-  var script = document.createElement('script');
-  script.id   = '_js_' + cbName;
-  script.src  = GAS_URL + '?' + qs;
-  script.async = true;
-  script.onerror = function() {
-    if (done) return; done = true;
-    clearTimeout(timer); cleanup();
-    onError && onError(new Error('通信エラーが発生しました。ページを再読み込みしてお試しください。'));
-  };
-  document.head.appendChild(script);
+  fetch(url, { redirect: 'follow' })
+    .then(function(res) {
+      if (timedOut) return;
+      return res.text();
+    })
+    .then(function(text) {
+      if (timedOut || !text) return;
+      clearTimeout(timer);
+      try {
+        var data = JSON.parse(text);
+        if (data && data.error) onError && onError(new Error(data.error));
+        else onSuccess && onSuccess(data);
+      } catch(e) {
+        onError && onError(new Error('レスポンスの解析に失敗しました。'));
+      }
+    })
+    .catch(function(e) {
+      if (timedOut) return;
+      clearTimeout(timer);
+      onError && onError(new Error('通信エラーが発生しました。ページを再読み込みしてお試しください。'));
+    });
 }
 
 // ── ウォームアップ ──
 function warmup() {
-  var cb = '_wu_' + Date.now();
-  window[cb] = function(){ delete window[cb]; };
-  var s = document.createElement('script');
-  s.src = GAS_URL + '?action=ping&callback=' + encodeURIComponent(cb);
-  s.async = true;
-  s.onerror = function(){ delete window[cb]; if(s.parentNode) s.parentNode.removeChild(s); };
-  document.head.appendChild(s);
+  fetch(GAS_URL + '?action=ping', { redirect: 'follow' }).catch(function(){});
 }
 
 // ── 初期化 ──
