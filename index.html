@@ -6,17 +6,20 @@
 <title>無料カウンセリング予約 | TOKOWAKA 吉祥寺</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Noto+Sans+JP:wght@300;400;500&family=Noto+Serif+JP:wght@200;300;400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@200;300;400&display=swap" rel="stylesheet">
 <style>
 :root{
-  --ink:#1a1814;--soft:#3a3228;--muted:#8a7e72;
-  --cream:#f5f2eb;--gold:#b8965a;--gold-l:#d4b882;--gold-p:#f2ead8;
+  --ink:#1a1814;--soft:#3a3228;--muted:#9a8e82;
+  --cream:#f5f2eb;--warm:#fdfcf8;
+  --gold:#b8965a;--gold-l:#d4b882;--gold-p:#f2ead8;
   --teal:#2d5a5a;--teal-p:#e8f0f0;
-  --bd:rgba(184,150,90,.18);--r:6px;--max:680px;--pad:20px;
+  --slot-ok-bg:#fff;--slot-ok-text:#1a6bb5;--slot-ok-bd:#c8ddf5;
+  --slot-ng-bg:#f2f2f2;--slot-ng-text:#aaa;
+  --bd:rgba(184,150,90,.18);--r:8px;--max:680px;--pad:16px;
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{font-family:'Noto Sans JP',sans-serif;background:#fff;color:var(--ink);min-height:100vh;font-size:14px;font-weight:300;overscroll-behavior-y:none}
+body{font-family:'Noto Sans JP',sans-serif;background:var(--warm);color:var(--ink);min-height:100vh;font-size:14px;font-weight:300;overscroll-behavior-y:none}
 button{font-family:inherit;cursor:pointer;border:none;background:none}
 
 /* ── HEADER ── */
@@ -26,113 +29,111 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 .badge{background:var(--gold);color:#fff;font-family:'Noto Sans JP',sans-serif;font-size:9px;font-weight:500;letter-spacing:.1em;padding:5px 12px;border-radius:100px;white-space:nowrap}
 
 /* ── HERO ── */
-.hero{background:var(--ink);padding:32px var(--pad) 28px;position:relative;overflow:hidden}
+.hero{background:var(--ink);padding:28px var(--pad) 24px;position:relative;overflow:hidden}
 .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 55% 46% at 80% 30%,rgba(45,90,90,.15),transparent 60%);pointer-events:none}
 .hero-inner{position:relative;max-width:var(--max);margin:0 auto}
-.eyebrow{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:11px;letter-spacing:.18em;color:var(--gold-l);display:block;margin-bottom:8px}
-.hero h1{font-family:'Noto Serif JP',serif;font-weight:200;font-size:clamp(20px,5vw,28px);line-height:1.5;letter-spacing:.05em;color:#fff;margin-bottom:8px}
+.eyebrow{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:11px;letter-spacing:.18em;color:var(--gold-l);display:block;margin-bottom:6px}
+.hero h1{font-family:'Noto Serif JP',serif;font-weight:200;font-size:clamp(18px,4.5vw,24px);line-height:1.5;letter-spacing:.05em;color:#fff;margin-bottom:6px}
 .hero h1 em{font-style:normal;color:var(--gold-l)}
-.rule{width:20px;height:1px;background:var(--gold);margin:10px 0}
-.hero p{font-family:'Noto Sans JP',sans-serif;font-size:11px;font-weight:300;color:rgba(255,255,255,.42);line-height:1.9}
+.rule{width:20px;height:1px;background:var(--gold);margin:8px 0}
+.hero p{font-size:11px;font-weight:300;color:rgba(255,255,255,.4);line-height:1.9}
 
 /* ── STEPS ── */
 .steps-outer{background:var(--cream);border-bottom:1px solid var(--bd)}
 .steps{display:flex;max-width:var(--max);margin:0 auto;padding:0 var(--pad)}
-.step{flex:1;border-top:2px solid transparent;padding:12px 0 10px;opacity:.3;transition:opacity .3s,border-color .3s}
+.step{flex:1;border-top:2px solid transparent;padding:10px 0 8px;opacity:.3;transition:opacity .3s,border-color .3s}
 .step.active{opacity:1;border-top-color:var(--gold)}
 .step.done{opacity:.6;border-top-color:var(--gold-l)}
-.srow{display:flex;align-items:center;gap:6px}
-.sdot{width:18px;height:18px;border-radius:50%;background:rgba(184,150,90,.15);border:1px solid rgba(184,150,90,.3);display:flex;align-items:center;justify-content:center;font-size:8px;font-weight:700;flex-shrink:0;color:var(--gold);font-family:'Noto Sans JP',sans-serif}
+.srow{display:flex;align-items:center;gap:5px}
+.sdot{width:16px;height:16px;border-radius:50%;background:rgba(184,150,90,.15);border:1px solid rgba(184,150,90,.3);display:flex;align-items:center;justify-content:center;font-size:7px;font-weight:700;flex-shrink:0;color:var(--gold)}
 .step.active .sdot{background:var(--gold);color:#fff;border-color:var(--gold)}
 .step.done .sdot{background:var(--gold-l);color:#fff;border-color:var(--gold-l)}
-.stxt{font-size:9px;color:var(--soft);letter-spacing:.05em;font-family:'Noto Sans JP',sans-serif;white-space:nowrap}
+.stxt{font-size:9px;color:var(--soft);letter-spacing:.05em;white-space:nowrap}
 .step.active .stxt{color:var(--ink)}
 
 /* ── MAIN ── */
-.main{width:100%;padding:0 0 100px;max-width:var(--max);margin:0 auto}
-.screen{display:none}.screen.on{display:block}
+.main{width:100%;padding:0 0 80px;max-width:var(--max);margin:0 auto}
 
-/* ── STEP HEADER ── */
-.sec-wrap{padding:20px var(--pad) 0}
-.sec-step{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:10px;letter-spacing:.18em;color:var(--gold);display:block;margin-bottom:4px}
-.sec-ttl{font-family:'Noto Serif JP',serif;font-weight:300;font-size:clamp(18px,4vw,22px);color:var(--ink);letter-spacing:.04em}
+/* ── CALENDAR SECTION ── */
+.cal-section{padding:20px var(--pad) 0}
+.sec-step{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:10px;letter-spacing:.18em;color:var(--gold);display:block;margin-bottom:3px}
+.sec-ttl{font-family:'Noto Serif JP',serif;font-weight:300;font-size:clamp(17px,4vw,20px);color:var(--ink);letter-spacing:.04em;margin-bottom:14px}
 
-/* ── 週ナビ ── */
-.week-nav{display:flex;align-items:center;justify-content:space-between;padding:16px var(--pad) 10px;max-width:var(--max);margin:0 auto}
-.week-title{font-family:'Cormorant Garamond',serif;font-size:16px;font-weight:400;color:var(--ink);letter-spacing:.08em}
-.week-btns{display:flex;gap:6px}
-.week-btn{display:flex;align-items:center;gap:4px;font-family:'Noto Sans JP',sans-serif;font-size:10px;color:var(--soft);border:1px solid var(--bd);border-radius:100px;padding:6px 12px;transition:all .2s;min-height:32px}
-.week-btn:hover,.week-btn:active{border-color:var(--gold);color:var(--gold)}
-.week-btn:disabled{opacity:.3;pointer-events:none}
+/* ── 週ナビ（写真スタイル） ── */
+.cal-wrap{background:#fff;border:1px solid #e0e0e0;border-radius:var(--r);overflow:hidden;box-shadow:0 1px 6px rgba(0,0,0,.06)}
+.week-nav{display:flex;align-items:center;justify-content:space-between;padding:10px 14px;border-bottom:1px solid #e8e8e8}
+.week-btn{display:flex;align-items:center;gap:3px;font-size:12px;color:var(--slot-ok-text);font-weight:400;padding:4px 8px;border-radius:4px;transition:background .15s;min-height:36px}
+.week-btn:hover,.week-btn:active{background:rgba(28,107,181,.07)}
+.week-btn:disabled{opacity:.25;pointer-events:none}
+.week-title{font-family:'Noto Sans JP',sans-serif;font-size:14px;font-weight:500;color:var(--ink);letter-spacing:.04em}
 
-/* ── グリッド ── */
-.grid-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;padding:0 var(--pad)}
-.grid-wrap::-webkit-scrollbar{display:none}
-.grid{border-collapse:collapse;width:100%;min-width:420px}
+/* ── グリッドテーブル ── */
+.grid-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.grid-scroll::-webkit-scrollbar{display:none}
+table.cal{border-collapse:collapse;width:100%;min-width:340px}
 
-/* ヘッダー行（日付） */
-.grid thead th{padding:0;position:sticky;top:56px;z-index:10;background:#fff}
-.grid thead tr{border-bottom:2px solid var(--bd)}
-.th-time{width:52px;min-width:52px;font-size:10px;color:var(--muted);font-family:'Noto Sans JP',sans-serif;padding:10px 8px 10px 0;text-align:right;font-weight:400;vertical-align:bottom;border-right:1px solid rgba(0,0,0,.06)}
-.th-date{text-align:center;padding:8px 4px;cursor:pointer;min-width:52px}
-.th-date-inner{display:flex;flex-direction:column;align-items:center;gap:2px}
-.th-dow{font-family:'Noto Sans JP',sans-serif;font-size:9px;font-weight:500;color:var(--muted)}
-.th-d{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:400;color:var(--ink);line-height:1}
-.th-dot{width:5px;height:5px;border-radius:50%;margin-top:2px;background:transparent}
-.th-date.has-slot .th-dot{background:var(--gold)}
-.th-date.is-today .th-d{color:var(--teal);font-weight:500}
+/* 日付ヘッダー */
+table.cal thead th{background:#fff;position:sticky;top:56px;z-index:10}
+.th-empty{width:48px;min-width:48px;border-right:1px solid #e8e8e8}
+.th-day{text-align:center;padding:10px 4px 8px;border-right:1px solid #e8e8e8;min-width:52px;cursor:default}
+.th-day:last-child{border-right:none}
+.th-day-num{font-family:'Noto Sans JP',sans-serif;font-size:17px;font-weight:700;color:var(--ink);line-height:1;display:block}
+.th-day-dow{font-size:10px;font-weight:400;color:var(--muted);display:block;margin-top:2px}
+.th-day.is-today .th-day-num{color:var(--slot-ok-text)}
+.th-day.is-today .th-day-dow{color:var(--slot-ok-text)}
+thead tr{border-bottom:2px solid #e0e0e0}
 
-/* セル */
-.grid tbody td{padding:3px 4px;text-align:center;vertical-align:middle;min-width:52px}
-.td-time{font-family:'Noto Sans JP',sans-serif;font-size:11px;color:var(--muted);font-weight:400;text-align:right;padding:3px 8px 3px 0;border-right:1px solid rgba(0,0,0,.06);white-space:nowrap}
-.grid tbody tr{border-bottom:1px solid rgba(0,0,0,.04)}
+/* 時間ラベル */
+.td-time{font-size:11px;color:var(--ink);font-weight:400;text-align:right;padding:0 8px 0 4px;border-right:1px solid #e8e8e8;white-space:nowrap;vertical-align:middle;background:#fff}
+.td-time.minor{font-size:10px;color:var(--muted);font-weight:300}
 
-/* ○ボタン */
-.slot-btn{width:40px;height:40px;border-radius:50%;border:1.5px solid var(--gold);background:#fff;color:var(--gold);font-size:15px;font-weight:700;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;transition:all .18s;touch-action:manipulation;font-family:'Noto Sans JP',sans-serif}
-.slot-btn:active,.slot-btn:hover{background:var(--gold);color:#fff;transform:scale(1.08)}
-.slot-btn.sel{background:var(--gold);color:#fff;box-shadow:0 2px 10px rgba(184,150,90,.4)}
+/* スロットセル */
+table.cal tbody tr{border-bottom:1px solid #f0f0f0}
+table.cal tbody td.slot-cell{padding:3px 3px;text-align:center;border-right:1px solid #e8e8e8;vertical-align:middle}
+table.cal tbody td.slot-cell:last-child{border-right:none}
 
-/* ×表示 */
-.slot-x{width:40px;height:40px;border-radius:50%;border:1px solid rgba(0,0,0,.1);background:var(--cream);color:rgba(0,0,0,.2);font-size:13px;font-weight:700;display:inline-flex;align-items:center;justify-content:center;font-family:'Noto Sans JP',sans-serif}
+/* スロットブロック */
+.slot-block{width:100%;min-height:40px;border-radius:5px;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;transition:all .15s;touch-action:manipulation}
+.slot-block.ok{background:var(--slot-ok-bg);border:1.5px solid var(--slot-ok-bd);color:var(--slot-ok-text);cursor:pointer}
+.slot-block.ok:hover,.slot-block.ok:active{background:#e8f0fb;transform:scale(1.05)}
+.slot-block.ok.sel{background:var(--slot-ok-text);color:#fff;border-color:var(--slot-ok-text);box-shadow:0 2px 8px rgba(28,107,181,.3)}
+.slot-block.ng{background:var(--slot-ng-bg);border:1.5px solid #e0e0e0;color:var(--slot-ng-text);cursor:default}
+.slot-block.empty{background:transparent;border:none}
 
-/* 空セル */
-.slot-empty{display:inline-block;width:40px;height:40px}
+/* ── 選択バナー（スロット選択後） ── */
+.sel-banner{background:var(--slot-ok-text);color:#fff;padding:12px var(--pad);display:none;align-items:center;justify-content:space-between;gap:10px;position:sticky;bottom:0;z-index:100;box-shadow:0 -2px 12px rgba(0,0,0,.15)}
+.sel-banner.on{display:flex}
+.sel-banner-info{flex:1}
+.sel-banner-label{font-size:10px;opacity:.75;letter-spacing:.1em;display:block;margin-bottom:2px}
+.sel-banner-main{font-size:14px;font-weight:500}
+.sel-banner-btn{background:#fff;color:var(--slot-ok-text);font-size:11px;font-weight:700;letter-spacing:.1em;padding:10px 18px;border-radius:100px;white-space:nowrap;flex-shrink:0;transition:opacity .2s}
+.sel-banner-btn:active{opacity:.8}
 
-.no-slots-row td{padding:24px var(--pad);text-align:center;color:var(--muted);font-size:13px;font-family:'Noto Sans JP',sans-serif}
+/* ── フォームセクション ── */
+.form-section{padding:24px var(--pad) 0;display:none}
+.form-section.on{display:block}
 
-/* ── 選択情報バー ── */
-.sel-bar{background:var(--gold-p);border-top:1px solid var(--bd);border-bottom:1px solid var(--bd);padding:12px var(--pad);display:none}
-.sel-bar.on{display:flex;align-items:center;justify-content:space-between;gap:12px;max-width:var(--max);margin:0 auto}
-.sel-bar-info{flex:1}
-.sel-bar-label{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:10px;color:var(--gold);letter-spacing:.14em;display:block;margin-bottom:2px}
-.sel-bar-main{font-family:'Noto Serif JP',serif;font-weight:400;font-size:14px;color:var(--ink)}
-.sel-bar-sub{font-family:'Noto Sans JP',sans-serif;font-size:11px;color:var(--soft);margin-top:2px}
-.sel-bar-btn{background:var(--gold);color:#fff;font-family:'Noto Sans JP',sans-serif;font-size:11px;font-weight:500;letter-spacing:.1em;padding:12px 20px;border-radius:var(--r);white-space:nowrap;min-height:44px;transition:background .2s}
-.sel-bar-btn:active,.sel-bar-btn:hover{background:var(--gold-l)}
+.sel-confirm{background:var(--gold-p);border:1px solid var(--bd);border-radius:var(--r);padding:13px 16px;margin-bottom:18px;display:flex;align-items:center;justify-content:space-between;gap:10px}
+.sc-info{flex:1}
+.sc-label{font-size:9px;color:var(--gold);letter-spacing:.18em;font-weight:500;display:block;margin-bottom:3px}
+.sc-main{font-family:'Noto Serif JP',serif;font-size:15px;color:var(--ink)}
+.sc-sub{font-size:11px;color:var(--soft);margin-top:2px}
+.sc-change{font-size:11px;color:var(--soft);border:1px solid var(--bd);border-radius:100px;padding:6px 12px;flex-shrink:0;transition:all .2s}
+.sc-change:hover{border-color:var(--gold);color:var(--gold)}
 
-/* ── STEP3: フォーム ── */
-#sc2{padding:0 var(--pad) 0}
-.back-btn{display:inline-flex;align-items:center;gap:5px;font-size:11px;letter-spacing:.08em;color:var(--soft);border:1px solid var(--bd);border-radius:100px;padding:8px 16px;margin:18px 0 16px;transition:all .2s;min-height:40px;font-family:'Noto Sans JP',sans-serif}
-.back-btn:active,.back-btn:hover{border-color:var(--gold);color:var(--gold)}
-
-.sel-info{background:var(--gold-p);border:1px solid var(--bd);border-radius:var(--r);padding:14px 16px;margin-bottom:18px}
-.si-label{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:10px;color:var(--gold);letter-spacing:.14em;display:block;margin-bottom:4px}
-.si-main{font-family:'Noto Serif JP',serif;font-weight:400;font-size:15px;color:var(--ink)}
-.si-sub{font-family:'Noto Sans JP',sans-serif;font-size:11px;color:var(--soft);margin-top:3px}
-
-.fcard{background:#fff;border:1px solid var(--bd);border-radius:var(--r);padding:20px;box-shadow:0 1px 12px rgba(0,0,0,.04)}
+.fcard{background:#fff;border:1px solid #e0e0e0;border-radius:var(--r);padding:20px;box-shadow:0 1px 6px rgba(0,0,0,.04)}
 .fgrid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-.fd{display:flex;flex-direction:column;gap:7px}
+.fd{display:flex;flex-direction:column;gap:6px}
 .fd.full{grid-column:1/-1}
-.fd label{font-family:'Noto Sans JP',sans-serif;font-size:9px;color:var(--gold);letter-spacing:.18em;font-weight:500;text-transform:uppercase}
-.fd input,.fd textarea{background:var(--cream);border:1px solid var(--bd);border-radius:var(--r);padding:12px 14px;color:var(--ink);font-size:16px;font-family:'Noto Sans JP',sans-serif;outline:none;-webkit-appearance:none;transition:border-color .2s;width:100%;min-height:48px;font-weight:300}
-.fd input:focus,.fd textarea:focus{border-color:var(--gold);background:#fff;box-shadow:0 0 0 3px rgba(184,150,90,.08)}
-.fd input::placeholder,.fd textarea::placeholder{color:rgba(58,50,40,.28)}
-.fd textarea{min-height:80px;resize:none;line-height:1.75;font-size:14px}
-.note-hint{font-family:'Noto Sans JP',sans-serif;font-size:10px;color:var(--muted);margin-top:4px;line-height:1.6}
+.fd label{font-size:9px;color:var(--gold);letter-spacing:.18em;font-weight:500;text-transform:uppercase}
+.fd input,.fd textarea{background:var(--cream);border:1px solid #ddd;border-radius:6px;padding:11px 13px;color:var(--ink);font-size:16px;font-family:'Noto Sans JP',sans-serif;outline:none;-webkit-appearance:none;transition:border-color .2s;width:100%;min-height:46px;font-weight:300}
+.fd input:focus,.fd textarea:focus{border-color:var(--slot-ok-text);background:#fff;box-shadow:0 0 0 3px rgba(28,107,181,.08)}
+.fd input::placeholder,.fd textarea::placeholder{color:rgba(0,0,0,.22)}
+.fd textarea{min-height:76px;resize:none;line-height:1.75;font-size:14px}
+.note-hint{font-size:10px;color:var(--muted);margin-top:3px;line-height:1.6}
 
-.err{background:rgba(180,60,60,.06);border:1px solid rgba(180,60,60,.22);border-radius:var(--r);padding:11px 14px;color:#8b3030;font-size:12px;margin-top:14px;display:none;font-family:'Noto Sans JP',sans-serif}
-.sbtn{margin-top:18px;width:100%;padding:17px;background:var(--gold);color:#fff;border:none;border-radius:var(--r);font-family:'Noto Sans JP',sans-serif;font-size:12px;font-weight:500;letter-spacing:.14em;transition:all .2s;min-height:54px;-webkit-appearance:none}
+.err{background:rgba(180,60,60,.06);border:1px solid rgba(180,60,60,.2);border-radius:6px;padding:10px 13px;color:#8b3030;font-size:12px;margin-top:12px;display:none}
+.sbtn{margin-top:16px;width:100%;padding:16px;background:var(--gold);color:#fff;border:none;border-radius:var(--r);font-size:12px;font-weight:500;letter-spacing:.14em;transition:all .2s;min-height:52px;-webkit-appearance:none}
 .sbtn:active,.sbtn:hover{background:var(--gold-l)}
 .sbtn:disabled{background:rgba(184,150,90,.22);color:var(--soft);cursor:default}
 
@@ -140,34 +141,28 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 .done-wrap{display:none;text-align:center;padding:52px var(--pad) 100px;max-width:var(--max);margin:0 auto}
 .done-wrap.on{display:block}
 .done-ic{width:60px;height:60px;background:var(--teal);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:24px;color:#fff;margin:0 auto 20px}
-.done-ttl{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(30px,8vw,40px);letter-spacing:.08em;margin-bottom:8px;color:var(--ink)}
-.done-sub{font-family:'Noto Sans JP',sans-serif;color:var(--soft);font-size:12px;line-height:2;margin-bottom:20px}
-.done-card{background:#fff;border:1px solid var(--bd);border-radius:var(--r);padding:18px;margin:0 auto 16px;box-shadow:0 1px 12px rgba(0,0,0,.04);max-width:380px;text-align:left}
+.done-ttl{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(30px,8vw,40px);letter-spacing:.08em;margin-bottom:8px}
+.done-sub{font-size:12px;line-height:2;color:var(--soft);margin-bottom:20px}
+.done-card{background:#fff;border:1px solid var(--bd);border-radius:var(--r);padding:18px;margin:0 auto 16px;box-shadow:0 1px 8px rgba(0,0,0,.04);max-width:380px;text-align:left}
 .dr{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;padding:10px 0;border-bottom:1px solid rgba(0,0,0,.06);font-size:13px}
 .dr:last-child{border-bottom:none}
-.dk{color:var(--soft);flex-shrink:0;font-family:'Noto Sans JP',sans-serif;font-size:10px;letter-spacing:.08em}
+.dk{color:var(--soft);flex-shrink:0;font-size:10px;letter-spacing:.08em}
 .dv{font-weight:500;text-align:right;color:var(--ink);font-family:'Noto Serif JP',serif}
-.done-note{max-width:380px;margin:0 auto;background:var(--teal-p);border:1px solid rgba(45,90,90,.16);border-radius:var(--r);padding:13px 15px;font-family:'Noto Sans JP',sans-serif;font-size:11px;color:var(--teal);line-height:1.9}
+.done-note{max-width:380px;margin:0 auto;background:var(--teal-p);border:1px solid rgba(45,90,90,.16);border-radius:var(--r);padding:13px 15px;font-size:11px;color:var(--teal);line-height:1.9}
 
 /* ── FOOTER ── */
-.foot{background:var(--ink);padding:20px var(--pad);text-align:center;border-top:1px solid rgba(184,150,90,.08);margin-top:40px}
+.foot{background:var(--ink);padding:20px var(--pad);text-align:center;margin-top:40px}
 .foot-logo{font-family:'Cormorant Garamond',serif;font-size:14px;color:rgba(255,255,255,.3);letter-spacing:.14em}
-.foot-copy{font-family:'Noto Sans JP',sans-serif;font-size:8px;color:rgba(255,255,255,.14);margin-top:6px;letter-spacing:.06em}
+.foot-copy{font-size:8px;color:rgba(255,255,255,.14);margin-top:6px;letter-spacing:.06em}
 
-.loading{text-align:center;padding:36px 0;color:var(--muted);font-size:12px;font-family:'Noto Sans JP',sans-serif}
+.loading{text-align:center;padding:32px 0;color:var(--muted);font-size:12px}
 
-/* ── レスポンシブ ── */
-@media(min-width:600px){
-  .fgrid{grid-template-columns:1fr 1fr}
-  .grid-wrap{padding:0 var(--pad)}
-  .th-date,.grid tbody td{min-width:64px}
-  .slot-btn,.slot-x,.slot-empty{width:46px;height:46px}
-}
-@media(max-width:380px){
-  :root{--pad:14px}
-  .th-date,.grid tbody td{min-width:44px}
-  .slot-btn,.slot-x,.slot-empty{width:36px;height:36px;font-size:13px}
-  .th-d{font-size:18px}
+@media(max-width:400px){
+  :root{--pad:12px}
+  .th-day{min-width:44px}
+  .th-day-num{font-size:15px}
+  .slot-block{min-height:36px;font-size:14px}
+  .td-time{font-size:10px;padding:0 5px 0 2px}
 }
 </style>
 </head>
@@ -180,7 +175,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 </header>
 
 <!-- HERO -->
-<div class="hero">
+<div class="hero" id="heroArea">
   <div class="hero-inner">
     <span class="eyebrow">Free Counseling Reservation</span>
     <h1>無料カウンセリング<br><em>ご予約フォーム</em></h1>
@@ -190,7 +185,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 </div>
 
 <!-- STEPS -->
-<div class="steps-outer">
+<div class="steps-outer" id="stepsArea">
   <div class="steps">
     <div class="step active" id="step1"><div class="srow"><span class="sdot">1</span><span class="stxt">日時を選ぶ</span></div></div>
     <div class="step" id="step2"><div class="srow"><span class="sdot">2</span><span class="stxt">情報を入力</span></div></div>
@@ -201,56 +196,55 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 <!-- MAIN -->
 <main class="main" id="mainWrap">
 
-  <!-- SC1: 日時選択（週グリッド） -->
-  <section class="screen on" id="sc1">
-    <div class="sec-wrap">
-      <span class="sec-step">Step 01</span>
-      <div class="sec-ttl">日時を選ぶ</div>
-    </div>
+  <!-- カレンダー -->
+  <div class="cal-section">
+    <span class="sec-step">Step 01</span>
+    <div class="sec-ttl">日時を選ぶ</div>
 
-    <!-- 週ナビ -->
-    <div class="week-nav">
-      <div class="week-title" id="weekTitle">読み込み中...</div>
-      <div class="week-btns">
-        <button class="week-btn" id="prevWeekBtn" onclick="shiftWeek(-1)" disabled>‹ 前の週</button>
-        <button class="week-btn" id="nextWeekBtn" onclick="shiftWeek(1)">次の週 ›</button>
+    <div class="cal-wrap">
+      <!-- 週ナビ -->
+      <div class="week-nav">
+        <button class="week-btn" id="prevWeekBtn" onclick="shiftWeek(-1)" disabled>‹ 前の一週間</button>
+        <div class="week-title" id="weekTitle">読み込み中...</div>
+        <button class="week-btn" id="nextWeekBtn" onclick="shiftWeek(1)">次の一週間 ›</button>
+      </div>
+      <!-- グリッド -->
+      <div class="grid-scroll">
+        <table class="cal" id="calTable">
+          <thead><tr><th class="th-empty"></th></tr></thead>
+          <tbody><tr><td colspan="8"><div class="loading">空き枠を取得しています...</div></td></tr></tbody>
+        </table>
       </div>
     </div>
+  </div>
 
-    <!-- グリッド -->
-    <div class="grid-wrap">
-      <table class="grid" id="slotGrid">
-        <thead><tr><th class="th-time"></th></tr></thead>
-        <tbody><tr><td colspan="8"><div class="loading">空き枠を取得しています...</div></td></tr></tbody>
-      </table>
+  <!-- 選択バナー（スロット選択後に表示） -->
+  <div class="sel-banner" id="selBanner">
+    <div class="sel-banner-info">
+      <span class="sel-banner-label">選択中の日時</span>
+      <div class="sel-banner-main" id="selBannerMain">—</div>
     </div>
+    <button class="sel-banner-btn" onclick="scrollToForm()">申し込む ↓</button>
+  </div>
 
-    <!-- 選択バー（スロット選択後に表示） -->
-    <div class="sel-bar" id="selBar">
-      <div class="sel-bar-info">
-        <span class="sel-bar-label">Selected</span>
-        <div class="sel-bar-main" id="selBarMain">—</div>
-        <div class="sel-bar-sub" id="selBarSub">—</div>
-      </div>
-      <button class="sel-bar-btn" onclick="goForm()">次へ　›</button>
-    </div>
-  </section>
-
-  <!-- SC2: お客様情報 -->
-  <section class="screen" id="sc2">
-    <button class="back-btn" onclick="histBack()">‹ 日時選択に戻る</button>
+  <!-- フォームセクション -->
+  <div class="form-section" id="formSection">
     <span class="sec-step">Step 02</span>
-    <div class="sec-ttl" style="margin-bottom:16px">お客様情報を入力</div>
+    <div class="sec-ttl" style="margin-bottom:14px">お客様情報を入力</div>
 
-    <div class="sel-info">
-      <span class="si-label">Selected</span>
-      <p class="si-main" id="siMain">—</p>
-      <p class="si-sub"  id="siSub">—</p>
+    <!-- 選択内容確認 -->
+    <div class="sel-confirm">
+      <div class="sc-info">
+        <span class="sc-label">Selected</span>
+        <div class="sc-main" id="scMain">—</div>
+        <div class="sc-sub">所要時間：75分（無料）</div>
+      </div>
+      <button class="sc-change" onclick="clearSlot()">変更</button>
     </div>
 
     <div class="fcard">
       <div class="fgrid">
-        <div class="fd"><label>お名前</label><input type="text"  id="fN" placeholder="山田 太郎" autocomplete="name"></div>
+        <div class="fd"><label>お名前</label><input type="text" id="fN" placeholder="山田 太郎" autocomplete="name"></div>
         <div class="fd"><label>ふりがな</label><input type="text" id="fK" placeholder="やまだ たろう" autocomplete="off"></div>
         <div class="fd full"><label>メールアドレス</label><input type="email" id="fE" placeholder="example@email.com" inputmode="email" autocomplete="email"></div>
         <div class="fd full"><label>電話番号</label><input type="tel" id="fP" placeholder="090-0000-0000" inputmode="tel" autocomplete="tel"></div>
@@ -263,7 +257,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
       <div class="err" id="err"></div>
       <button class="sbtn" id="sbtn" onclick="doSubmit()">予約を確定する</button>
     </div>
-  </section>
+  </div>
 
 </main>
 
@@ -290,263 +284,197 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 </footer>
 
 <script>
-var GAS_URL   = 'https://script.google.com/macros/s/AKfycbylPva89Yw30HyQSq4GMunGyXuTjwFcpzeONJBdNeglEZ-ef_iJdQrhIrpcGUSwX2ET/exec';
-var DAY       = ['日','月','火','水','木','金','土'];
-var H_START   = 8, H_END = 23, SESSION = 75, INTERVAL = 30;
+var GAS_URL  = 'https://script.google.com/macros/s/AKfycbylPva89Yw30HyQSq4GMunGyXuTjwFcpzeONJBdNeglEZ-ef_iJdQrhIrpcGUSwX2ET/exec';
+var DAY      = ['日','月','火','水','木','金','土'];
+var H_START  = 8, H_END = 23, SESSION = 75, INTERVAL = 30;
 
-var allSlots    = [];   // GASから取得した全空き枠
-var selSlot     = null; // 選択中のスロット
-var weekOffset  = 0;    // 何週先を表示中か（0=今週）
-var currentScreen = 'sc1';
+var allSlots   = [];
+var selSlot    = null;
+var weekOffset = 0;
 
-// ── fetch方式（Chrome ORB対策・redirect:follow）──
+// ── fetch API呼び出し ──
 function gasCall(action, params, onSuccess, onError) {
-  var qs = 'action=' + encodeURIComponent(action);
+  var qs  = 'action=' + encodeURIComponent(action);
   if (params) qs += '&params=' + encodeURIComponent(JSON.stringify(params));
   var url = GAS_URL + '?' + qs;
-
   var timedOut = false;
-  var timer = setTimeout(function(){
-    timedOut = true;
-    onError && onError(new Error('タイムアウトしました。通信環境をご確認ください。'));
-  }, 30000);
-
+  var timer = setTimeout(function(){ timedOut = true; onError && onError(new Error('タイムアウトしました。')); }, 30000);
   fetch(url, { redirect: 'follow' })
-    .then(function(res) {
-      if (timedOut) return;
-      return res.text();
+    .then(function(r){ if(timedOut) return; return r.text(); })
+    .then(function(t){
+      if(timedOut||!t) return; clearTimeout(timer);
+      try { var d=JSON.parse(t); if(d&&d.error) onError&&onError(new Error(d.error)); else onSuccess&&onSuccess(d); }
+      catch(e){ onError&&onError(new Error('レスポンス解析エラー')); }
     })
-    .then(function(text) {
-      if (timedOut || !text) return;
-      clearTimeout(timer);
-      try {
-        var data = JSON.parse(text);
-        if (data && data.error) onError && onError(new Error(data.error));
-        else onSuccess && onSuccess(data);
-      } catch(e) {
-        onError && onError(new Error('レスポンスの解析に失敗しました。'));
-      }
-    })
-    .catch(function(e) {
-      if (timedOut) return;
-      clearTimeout(timer);
-      onError && onError(new Error('通信エラーが発生しました。ページを再読み込みしてお試しください。'));
-    });
+    .catch(function(e){ if(timedOut) return; clearTimeout(timer); onError&&onError(new Error('通信エラーが発生しました。再読み込みしてください。')); });
 }
 
-// ── ウォームアップ ──
-function warmup() {
-  fetch(GAS_URL + '?action=ping', { redirect: 'follow' }).catch(function(){});
-}
+function warmup() { fetch(GAS_URL+'?action=ping',{redirect:'follow'}).catch(function(){}); }
 
-// ── 初期化 ──
 window.addEventListener('load', function() {
   warmup();
-  history.replaceState({screen:'sc1'}, '', '');
   loadSlots();
 });
 
 function loadSlots() {
-  document.querySelector('#slotGrid tbody').innerHTML = '<tr><td colspan="8"><div class="loading">空き枠を取得しています...</div></td></tr>';
+  document.querySelector('#calTable tbody').innerHTML = '<tr><td colspan="8"><div class="loading">空き枠を取得しています...</div></td></tr>';
   gasCall('getSlots', null,
-    function(data) {
-      allSlots = data || [];
-      renderGrid();
-    },
-    function(e) {
-      document.querySelector('#slotGrid tbody').innerHTML = '<tr class="no-slots-row"><td colspan="8">'+e.message+'　<button onclick="loadSlots()" style="color:var(--gold);text-decoration:underline;background:none;border:none;cursor:pointer;font-size:12px">再読み込み</button></td></tr>';
+    function(data){ allSlots = data||[]; renderGrid(); },
+    function(e){
+      document.querySelector('#calTable tbody').innerHTML =
+        '<tr><td colspan="8" style="padding:24px;text-align:center;color:#999;font-size:12px">'+e.message+
+        '&nbsp;<button onclick="loadSlots()" style="color:#1a6bb5;text-decoration:underline;background:none;border:none;cursor:pointer">再読み込み</button></td></tr>';
     }
   );
 }
 
-// ── 週の日付配列を生成（月曜始まり）──
+// ── 直近7日間（今日から） ──
 function getWeekDates(offset) {
   var today = new Date(); today.setHours(0,0,0,0);
-  // 今週の月曜日を計算
-  var dow = today.getDay(); // 0=日,1=月,...,6=土
-  var diffToMonday = (dow === 0) ? -6 : 1 - dow; // 日曜なら-6、それ以外は1-dow
-  var monday = new Date(today); monday.setDate(today.getDate() + diffToMonday + offset * 7);
+  var start = new Date(today); start.setDate(today.getDate() + offset * 7);
   var dates = [];
   for (var i = 0; i < 7; i++) {
-    var d = new Date(monday); d.setDate(monday.getDate() + i);
+    var d = new Date(start); d.setDate(start.getDate() + i);
     dates.push(d);
   }
   return dates;
 }
 
-function fmtDate(d) { return d.getFullYear()+'/'+(d.getMonth()+1<10?'0':'')+(d.getMonth()+1)+'/'+(d.getDate()<10?'0':'')+d.getDate(); }
-function pad2(n) { return n < 10 ? '0'+n : ''+n; }
+function fmtDate(d){ return d.getFullYear()+'/'+(d.getMonth()+1<10?'0':'')+(d.getMonth()+1)+'/'+(d.getDate()<10?'0':'')+d.getDate(); }
+function pad2(n){ return n<10?'0'+n:''+n; }
 
 // ── グリッド描画 ──
 function renderGrid() {
-  var dates   = getWeekDates(weekOffset);
-  var today   = new Date(); today.setHours(0,0,0,0);
+  var dates  = getWeekDates(weekOffset);
+  var today  = new Date(); today.setHours(0,0,0,0);
+  var now    = new Date();
 
   // 週タイトル
-  var first = dates[0], last = dates[6];
-  document.getElementById('weekTitle').textContent =
-    (first.getMonth()+1) + '月' + first.getDate() + '日 〜 ' +
-    (last.getMonth()+1)  + '月' + last.getDate()  + '日';
-
-  // 前週ボタン：過去には戻れない
+  var f = dates[0], l = dates[6];
+  var titleStr = f.getFullYear() + '年' + (f.getMonth()+1) + '月';
+  if (f.getMonth() !== l.getMonth()) titleStr += ' 〜 ' + (l.getMonth()+1) + '月';
+  document.getElementById('weekTitle').textContent = titleStr;
   document.getElementById('prevWeekBtn').disabled = (weekOffset <= 0);
 
-  // 空き枠を日付・時刻でインデックス化
-  var slotMap = {}; // key: "yyyy/MM/dd|HH:mm"
+  // slotMap
+  var slotMap = {};
   for (var i = 0; i < allSlots.length; i++) {
     var sl = allSlots[i];
-    slotMap[sl.date + '|' + sl.startTime] = sl;
+    slotMap[sl.date+'|'+sl.startTime] = sl;
   }
 
-  // 空き枠がある日付セット
-  var hasSlotDates = {};
-  for (var j = 0; j < allSlots.length; j++) hasSlotDates[allSlots[j].date] = true;
-
-  // ── thead（日付行） ──
-  var thead = '<tr><th class="th-time">時間</th>';
+  // thead
+  var thead = '<tr><th class="th-empty"></th>';
   for (var di = 0; di < dates.length; di++) {
     var d   = dates[di];
-    var ds  = fmtDate(d);
-    var cls = 'th-date';
+    var cls = 'th-day';
     if (d.toDateString() === today.toDateString()) cls += ' is-today';
-    if (hasSlotDates[ds]) cls += ' has-slot';
-    thead += '<th class="'+cls+'"><div class="th-date-inner">'
-           + '<span class="th-dow">'+DAY[d.getDay()]+'</span>'
-           + '<span class="th-d">'+d.getDate()+'</span>'
-           + '<span class="th-dot"></span>'
-           + '</div></th>';
+    thead += '<th class="'+cls+'"><span class="th-day-num">'+d.getDate()+'</span><span class="th-day-dow">'+DAY[d.getDay()]+'</span></th>';
   }
   thead += '</tr>';
-  document.querySelector('#slotGrid thead').innerHTML = thead;
+  document.querySelector('#calTable thead').innerHTML = thead;
 
-  // ── tbody（時間スロット行） ──
-  var allTimes = [];
+  // 時間リスト
+  var times = [];
   for (var hh = H_START; hh < H_END; hh++) {
     for (var mm = 0; mm < 60; mm += INTERVAL) {
       if (hh*60 + mm + SESSION > H_END*60) continue;
-      allTimes.push(pad2(hh)+':'+pad2(mm));
+      times.push(pad2(hh)+':'+pad2(mm));
     }
   }
 
-  var now = new Date();
   var tbody = '';
-  var hasAnyVisible = false;
+  var hasAny = false;
 
-  for (var ti = 0; ti < allTimes.length; ti++) {
-    var time = allTimes[ti];
-    var rowHasAny = false;
+  for (var ti = 0; ti < times.length; ti++) {
+    var time  = times[ti];
+    var isMinor = (parseInt(time.split(':')[1]) !== 0); // 30分刻みの:30は小さく
 
-    // この時刻行に表示すべきセルがあるか確認
+    // 未来の行のみ表示
+    var rowFuture = false;
     for (var di2 = 0; di2 < dates.length; di2++) {
-      var slotDt = new Date(dates[di2]);
-      slotDt.setHours(parseInt(time.split(':')[0]), parseInt(time.split(':')[1]), 0, 0);
-      if (slotDt > now) { rowHasAny = true; break; }
+      var dt = new Date(dates[di2]);
+      dt.setHours(parseInt(time.split(':')[0]), parseInt(time.split(':')[1]), 0, 0);
+      if (dt > now) { rowFuture = true; break; }
     }
-    if (!rowHasAny) continue;
+    if (!rowFuture) continue;
+    hasAny = true;
 
-    hasAnyVisible = true;
-    tbody += '<tr><td class="td-time">'+time+'</td>';
-
+    tbody += '<tr><td class="td-time'+(isMinor?' minor':'')+'">'+time+'</td>';
     for (var di3 = 0; di3 < dates.length; di3++) {
-      var d2    = dates[di3];
-      var ds2   = fmtDate(d2);
-      var key   = ds2 + '|' + time;
-      var slotDt2 = new Date(d2);
-      slotDt2.setHours(parseInt(time.split(':')[0]), parseInt(time.split(':')[1]), 0, 0);
-      var isPast = slotDt2 <= now;
-
-      if (isPast) {
-        tbody += '<td><span class="slot-empty"></span></td>';
+      var d2   = dates[di3];
+      var ds   = fmtDate(d2);
+      var dt2  = new Date(d2);
+      dt2.setHours(parseInt(time.split(':')[0]), parseInt(time.split(':')[1]), 0, 0);
+      var past = dt2 <= now;
+      tbody += '<td class="slot-cell">';
+      if (past) {
+        tbody += '<div class="slot-block empty"></div>';
       } else {
-        var slot = slotMap[key];
+        var slot = slotMap[ds+'|'+time];
         if (slot) {
           var isSel = selSlot && selSlot.startISO === slot.startISO;
           var idx   = getIdx(slot);
-          tbody += '<td><button class="slot-btn'+(isSel?' sel':'')+'" onclick="pickSlot('+idx+')" aria-label="'+time+'を予約">○</button></td>';
+          tbody += '<div class="slot-block ok'+(isSel?' sel':'')+'" onclick="pickSlot('+idx+')">○</div>';
         } else {
-          tbody += '<td><span class="slot-x">×</span></td>';
+          tbody += '<div class="slot-block ng">×</div>';
         }
       }
+      tbody += '</td>';
     }
     tbody += '</tr>';
   }
 
-  if (!hasAnyVisible) {
-    tbody = '<tr class="no-slots-row"><td colspan="8">この週は対応できる枠がありません</td></tr>';
-  }
-
-  document.querySelector('#slotGrid tbody').innerHTML = tbody;
+  if (!hasAny) tbody = '<tr><td colspan="8" style="padding:24px;text-align:center;color:#999;font-size:12px">この期間は対応できる枠がありません</td></tr>';
+  document.querySelector('#calTable tbody').innerHTML = tbody;
 }
 
 function shiftWeek(dir) {
   weekOffset += dir;
   if (weekOffset < 0) weekOffset = 0;
   renderGrid();
-  window.scrollTo({top:0, behavior:'smooth'});
 }
 
 function getIdx(sl) {
-  for (var i = 0; i < allSlots.length; i++) {
-    if (allSlots[i].startISO === sl.startISO) return i;
-  }
+  for (var i = 0; i < allSlots.length; i++) if (allSlots[i].startISO === sl.startISO) return i;
   return 0;
 }
 
 // ── スロット選択 ──
 function pickSlot(idx) {
   selSlot = allSlots[idx];
-  renderGrid(); // ○ハイライト更新
+  renderGrid();
 
   var d = selSlot;
-  document.getElementById('selBarMain').textContent = d.date+'（'+d.dayOfWeek+'）　'+d.startTime+'〜'+d.endTime;
-  document.getElementById('selBarSub').textContent  = '所要時間：75分（無料）';
-  var bar = document.getElementById('selBar');
-  bar.style.display = 'flex';
-  bar.classList.add('on');
+  var mainTxt = d.date+'（'+d.dayOfWeek+'）　'+d.startTime+' 〜 '+d.endTime;
+  document.getElementById('selBannerMain').textContent = mainTxt;
+  document.getElementById('scMain').textContent = mainTxt;
 
-  // フォームの選択情報も更新
-  document.getElementById('siMain').textContent = d.date+'（'+d.dayOfWeek+'）　'+d.startTime+'〜'+d.endTime;
-  document.getElementById('siSub').textContent  = '所要時間：75分（無料）';
-}
+  // バナー表示
+  var banner = document.getElementById('selBanner');
+  banner.classList.add('on');
 
-// ── STEP2へ ──
-function goForm() {
-  if (!selSlot) return;
-  showScreen('sc2');
+  // フォームセクション表示
+  document.getElementById('formSection').classList.add('on');
+
   setStep(2);
 }
 
-// ── History API ──
-function showScreen(id, push) {
-  ['sc1','sc2'].forEach(function(s){
-    var el = document.getElementById(s);
-    el.classList.remove('on');
-    el.style.display = 'none';
-  });
-  var target = document.getElementById(id);
-  target.classList.add('on');
-  target.style.display = 'block';
-  currentScreen = id;
-  window.scrollTo({top:0, behavior:'smooth'});
-  if (push !== false) history.pushState({screen:id}, '', '');
+// フォームにスクロール
+function scrollToForm() {
+  var form = document.getElementById('formSection');
+  form.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
-window.addEventListener('popstate', function(e) {
-  var t = e.state && e.state.screen;
-  if (!t) { history.pushState({screen:currentScreen},'',''); return; }
-  if (t === 'sc1') selSlot = null;
-  ['sc1','sc2'].forEach(function(s){
-    var el = document.getElementById(s);
-    el.classList.remove('on');
-    el.style.display = 'none';
-  });
-  var target = document.getElementById(t);
-  target.classList.add('on');
-  target.style.display = 'block';
-  currentScreen = t;
-  setStep(t === 'sc1' ? 1 : 2);
-  window.scrollTo({top:0, behavior:'auto'});
-});
-function histBack() { history.back(); }
+
+// 日時変更
+function clearSlot() {
+  selSlot = null;
+  document.getElementById('selBanner').classList.remove('on');
+  document.getElementById('formSection').classList.remove('on');
+  renderGrid();
+  setStep(1);
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
 
 // ── 予約送信 ──
 function doSubmit() {
@@ -563,29 +491,29 @@ function doSubmit() {
 
   var btn = document.getElementById('sbtn'); btn.disabled=true; btn.textContent='送信中...';
 
-  gasCall('makeReservation', {
-    customerName:name, customerKana:kana, customerEmail:email, customerPhone:phone, customerNote:note,
-    startISO:selSlot.startISO, endISO:selSlot.endISO
-  },
-  function(r) {
-    if (r && r.success) {
-      document.getElementById('mainWrap').style.display = 'none';
-      document.querySelector('.hero').style.display     = 'none';
-      document.querySelector('.steps-outer').style.display = 'none';
-      document.getElementById('dDate').textContent = selSlot.date+'　'+selSlot.startTime+'〜'+selSlot.endTime;
-      document.getElementById('doneWrap').classList.add('on');
-      setStep(3);
-      window.scrollTo({top:0, behavior:'smooth'});
-    } else {
-      eb.textContent = (r && r.message) || '予約に失敗しました。もう一度お試しください。';
-      eb.style.display = 'block';
-      btn.disabled = false; btn.textContent = '予約を確定する';
+  gasCall('makeReservation',
+    { customerName:name, customerKana:kana, customerEmail:email, customerPhone:phone, customerNote:note, startISO:selSlot.startISO, endISO:selSlot.endISO },
+    function(r) {
+      if (r && r.success) {
+        document.getElementById('mainWrap').style.display = 'none';
+        document.getElementById('heroArea').style.display = 'none';
+        document.getElementById('stepsArea').style.display = 'none';
+        document.getElementById('selBanner').classList.remove('on');
+        document.getElementById('dDate').textContent = selSlot.date+'　'+selSlot.startTime+'〜'+selSlot.endTime;
+        document.getElementById('doneWrap').classList.add('on');
+        setStep(3);
+        window.scrollTo({top:0,behavior:'smooth'});
+      } else {
+        eb.textContent = (r&&r.message)||'予約に失敗しました。もう一度お試しください。';
+        eb.style.display = 'block';
+        btn.disabled=false; btn.textContent='予約を確定する';
+      }
+    },
+    function(e) {
+      eb.textContent = e.message; eb.style.display='block';
+      btn.disabled=false; btn.textContent='予約を確定する';
     }
-  },
-  function(e) {
-    eb.textContent = e.message; eb.style.display='block';
-    btn.disabled=false; btn.textContent='予約を確定する';
-  });
+  );
 }
 
 function setStep(n) {
