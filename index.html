@@ -284,7 +284,9 @@ table.cal tbody td.slot-cell:last-child{border-right:none}
 </footer>
 
 <script>
-var GAS_URL  = 'https://script.google.com/macros/s/AKfycbylPva89Yw30HyQSq4GMunGyXuTjwFcpzeONJBdNeglEZ-ef_iJdQrhIrpcGUSwX2ET/exec';
+var GAS_URL  = 'https://script.google.com/macros/s/AKfycbywmrVi3UpZ48RDlOoiH0eC_hbpS5Xx8mleLpIpTTxnJSqjAXWvOUfNC1HPy0opef9ATg/exec';
+var SS_ID    = '1nly4EqYJ1CJKoHv9P1EnWeio-EKUMFIdvDbNXdOrjyw';
+var SS_URL   = 'https://docs.google.com/spreadsheets/d/'+SS_ID+'/gviz/tq?tqx=out:csv&sheet=slots';
 var DAY      = ['日','月','火','水','木','金','土'];
 var H_START  = 8, H_END = 23, SESSION = 75, INTERVAL = 30;
 
@@ -318,14 +320,48 @@ window.addEventListener('load', function() {
 
 function loadSlots() {
   document.querySelector('#calTable tbody').innerHTML = '<tr><td colspan="8"><div class="loading">空き枠を取得しています...</div></td></tr>';
-  gasCall('getSlots', null,
-    function(data){ allSlots = data||[]; renderGrid(); },
-    function(e){
-      document.querySelector('#calTable tbody').innerHTML =
-        '<tr><td colspan="8" style="padding:24px;text-align:center;color:#999;font-size:12px">'+e.message+
-        '&nbsp;<button onclick="loadSlots()" style="color:#1a6bb5;text-decoration:underline;background:none;border:none;cursor:pointer">再読み込み</button></td></tr>';
-    }
-  );
+
+  // スプレッドシートからCSVで高速取得
+  fetch(SS_URL, { cache: 'no-store' })
+    .then(function(r){ return r.text(); })
+    .then(function(csv){
+      allSlots = parseSlotCsv(csv);
+      renderGrid();
+    })
+    .catch(function(){
+      // フォールバック：GASから直接取得
+      gasCall('getSlots', null,
+        function(data){ allSlots = data||[]; renderGrid(); },
+        function(e){
+          document.querySelector('#calTable tbody').innerHTML =
+            '<tr><td colspan="8" style="padding:24px;text-align:center;color:#999;font-size:12px">'+e.message+
+            '&nbsp;<button onclick="loadSlots()" style="color:#1a6bb5;text-decoration:underline;background:none;border:none;cursor:pointer">再読み込み</button></td></tr>';
+        }
+      );
+    });
+}
+
+// スプレッドシートCSVをパース
+function parseSlotCsv(csv) {
+  var lines = csv.trim().split('\n');
+  if (lines.length < 2) return [];
+  // ヘッダー行をスキップ（1行目）
+  var slots = [];
+  for (var i = 1; i < lines.length; i++) {
+    var cols = lines[i].split(',').map(function(c){ return c.replace(/^"|"$/g,'').trim(); });
+    if (cols.length < 6 || !cols[0]) continue;
+    slots.push({
+      date:        cols[0],
+      dayOfWeek:   cols[1],
+      startTime:   cols[2],
+      endTime:     cols[3],
+      startISO:    cols[4],
+      endISO:      cols[5],
+      trainerName: cols[6]||'',
+      trainerId:   cols[7]||''
+    });
+  }
+  return slots;
 }
 
 // ── 直近7日間（今日から） ──
