@@ -292,7 +292,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 <script>
 var GAS_URL   = 'https://script.google.com/macros/s/AKfycbylPva89Yw30HyQSq4GMunGyXuTjwFcpzeONJBdNeglEZ-ef_iJdQrhIrpcGUSwX2ET/exec';
 var DAY       = ['日','月','火','水','木','金','土'];
-var H_START   = 8, H_END = 23, SESSION = 75, INTERVAL = 15;
+var H_START   = 8, H_END = 23, SESSION = 75, INTERVAL = 30;
 
 var allSlots    = [];   // GASから取得した全空き枠
 var selSlot     = null; // 選択中のスロット
@@ -359,14 +359,16 @@ function loadSlots() {
   );
 }
 
-// ── 週の日付配列を生成 ──
+// ── 週の日付配列を生成（月曜始まり）──
 function getWeekDates(offset) {
   var today = new Date(); today.setHours(0,0,0,0);
-  // offset=0: 今日から7日
-  var start = new Date(today); start.setDate(today.getDate() + offset * 7);
+  // 今週の月曜日を計算
+  var dow = today.getDay(); // 0=日,1=月,...,6=土
+  var diffToMonday = (dow === 0) ? -6 : 1 - dow; // 日曜なら-6、それ以外は1-dow
+  var monday = new Date(today); monday.setDate(today.getDate() + diffToMonday + offset * 7);
   var dates = [];
   for (var i = 0; i < 7; i++) {
-    var d = new Date(start); d.setDate(start.getDate() + i);
+    var d = new Date(monday); d.setDate(monday.getDate() + i);
     dates.push(d);
   }
   return dates;
