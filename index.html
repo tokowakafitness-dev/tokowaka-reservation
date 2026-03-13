@@ -6,359 +6,168 @@
 <title>無料カウンセリング予約 | TOKOWAKA 吉祥寺</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Noto+Sans+JP:wght@300;400;500&family=Noto+Serif+JP:wght@200;300;400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Noto+Sans+JP:wght@300;400;500&family=Noto+Serif+JP:wght@200;300;400&display=swap" rel="stylesheet">
 <style>
 :root{
-  --ink:#1a1814; --ink2:#252118; --soft:#3a3228;
-  --cream:#f5f2eb; --warm:#fdfcf8;
-  --gold:#b8965a; --gold-l:#d4b882; --gold-p:#f2ead8;
-  --teal:#2d5a5a; --teal-l:#3d7a7a; --teal-p:#e8f0f0;
-  --bd:rgba(184,150,90,.18);
-  --r:4px;
-  --max:640px;
-  --pad:24px;
+  --ink:#1a1814;--soft:#3a3228;--muted:#8a7e72;
+  --cream:#f5f2eb;--gold:#b8965a;--gold-l:#d4b882;--gold-p:#f2ead8;
+  --teal:#2d5a5a;--teal-p:#e8f0f0;
+  --bd:rgba(184,150,90,.18);--r:6px;--max:680px;--pad:20px;
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{
-  font-family:'Noto Sans JP',sans-serif;
-  background:#fff;color:var(--ink);
-  min-height:100vh;font-size:15px;line-height:1.8;
-  font-weight:300;overscroll-behavior-y:none;
-}
-button{font-family:inherit;cursor:pointer;-webkit-tap-highlight-color:transparent}
+body{font-family:'Noto Sans JP',sans-serif;background:#fff;color:var(--ink);min-height:100vh;font-size:14px;font-weight:300;overscroll-behavior-y:none}
+button{font-family:inherit;cursor:pointer;border:none;background:none}
 
-/* ===== HEADER ===== */
-.hd{
-  position:sticky;top:0;z-index:200;
-  background:rgba(26,24,20,.97);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
-  border-bottom:1px solid var(--bd);
-  height:60px;display:flex;align-items:center;justify-content:space-between;
-  padding:0 var(--pad);
-}
-.logo{
-  font-family:'Cormorant Garamond',serif;font-weight:400;
-  letter-spacing:.14em;color:#fff;font-size:17px;line-height:1;
-  text-decoration:none;
-}
-.logo small{
-  font-family:'Noto Sans JP',sans-serif;
-  font-size:8px;font-weight:300;letter-spacing:.26em;
-  color:var(--gold-l);display:block;margin-top:3px;text-transform:uppercase;
-}
-.badge{
-  background:var(--gold);color:#fff;
-  font-family:'Noto Sans JP',sans-serif;
-  font-size:9px;font-weight:500;letter-spacing:.12em;
-  padding:6px 14px;border-radius:100px;white-space:nowrap;
-}
+/* ── HEADER ── */
+.hd{position:sticky;top:0;z-index:200;background:rgba(26,24,20,.97);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--bd);height:56px;display:flex;align-items:center;justify-content:space-between;padding:0 var(--pad)}
+.logo{font-family:'Cormorant Garamond',serif;font-weight:400;letter-spacing:.14em;color:#fff;font-size:16px;line-height:1;text-decoration:none}
+.logo small{font-family:'Noto Sans JP',sans-serif;font-size:7px;font-weight:300;letter-spacing:.26em;color:var(--gold-l);display:block;margin-top:3px;text-transform:uppercase}
+.badge{background:var(--gold);color:#fff;font-family:'Noto Sans JP',sans-serif;font-size:9px;font-weight:500;letter-spacing:.1em;padding:5px 12px;border-radius:100px;white-space:nowrap}
 
-/* ===== HERO ===== */
-.hero{
-  background:var(--ink2);padding:44px var(--pad) 36px;
-  position:relative;overflow:hidden;
-}
-.hero::before{
-  content:'';position:absolute;inset:0;
-  background:
-    radial-gradient(ellipse 55% 46% at 80% 30%,rgba(45,90,90,.18),transparent 60%),
-    radial-gradient(ellipse 38% 38% at 20% 80%,rgba(184,150,90,.09),transparent 60%);
-  pointer-events:none;
-}
-.hero-inner{position:relative;max-width:var(--max);margin:0 auto;}
-.eyebrow{
-  font-family:'Cormorant Garamond',serif;font-style:italic;
-  font-size:12px;letter-spacing:.18em;color:var(--gold-l);
-  display:block;margin-bottom:10px;
-}
-.hero h1{
-  font-family:'Noto Serif JP',serif;font-weight:200;
-  font-size:clamp(24px,6vw,36px);line-height:1.55;
-  letter-spacing:.05em;color:#fff;margin-bottom:10px;
-}
+/* ── HERO ── */
+.hero{background:var(--ink);padding:32px var(--pad) 28px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 55% 46% at 80% 30%,rgba(45,90,90,.15),transparent 60%);pointer-events:none}
+.hero-inner{position:relative;max-width:var(--max);margin:0 auto}
+.eyebrow{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:11px;letter-spacing:.18em;color:var(--gold-l);display:block;margin-bottom:8px}
+.hero h1{font-family:'Noto Serif JP',serif;font-weight:200;font-size:clamp(20px,5vw,28px);line-height:1.5;letter-spacing:.05em;color:#fff;margin-bottom:8px}
 .hero h1 em{font-style:normal;color:var(--gold-l)}
-.rule{width:24px;height:1px;background:var(--gold);margin:14px 0}
-.hero p{
-  font-family:'Noto Sans JP',sans-serif;font-size:12px;
-  font-weight:300;color:rgba(255,255,255,.46);line-height:2;
-}
+.rule{width:20px;height:1px;background:var(--gold);margin:10px 0}
+.hero p{font-family:'Noto Sans JP',sans-serif;font-size:11px;font-weight:300;color:rgba(255,255,255,.42);line-height:1.9}
 
-/* ===== STEPS ===== */
-.steps-outer{background:var(--cream);border-bottom:1px solid rgba(184,150,90,.14)}
+/* ── STEPS ── */
+.steps-outer{background:var(--cream);border-bottom:1px solid var(--bd)}
 .steps{display:flex;max-width:var(--max);margin:0 auto;padding:0 var(--pad)}
-.step{
-  flex:1;border-top:2px solid transparent;
-  padding:14px 0 12px;opacity:.35;
-  transition:opacity .3s,border-color .3s;
-}
+.step{flex:1;border-top:2px solid transparent;padding:12px 0 10px;opacity:.3;transition:opacity .3s,border-color .3s}
 .step.active{opacity:1;border-top-color:var(--gold)}
-.step.done{opacity:.65;border-top-color:var(--gold-l)}
-.srow{display:flex;align-items:center;gap:7px}
-.sdot{
-  width:20px;height:20px;border-radius:50%;
-  background:rgba(184,150,90,.15);border:1px solid rgba(184,150,90,.3);
-  display:flex;align-items:center;justify-content:center;
-  font-size:9px;font-weight:700;flex-shrink:0;
-  color:var(--gold);font-family:'Noto Sans JP',sans-serif;
-}
+.step.done{opacity:.6;border-top-color:var(--gold-l)}
+.srow{display:flex;align-items:center;gap:6px}
+.sdot{width:18px;height:18px;border-radius:50%;background:rgba(184,150,90,.15);border:1px solid rgba(184,150,90,.3);display:flex;align-items:center;justify-content:center;font-size:8px;font-weight:700;flex-shrink:0;color:var(--gold);font-family:'Noto Sans JP',sans-serif}
 .step.active .sdot{background:var(--gold);color:#fff;border-color:var(--gold)}
 .step.done .sdot{background:var(--gold-l);color:#fff;border-color:var(--gold-l)}
-.stxt{font-size:10px;color:var(--soft);letter-spacing:.06em;font-family:'Noto Sans JP',sans-serif;white-space:nowrap}
+.stxt{font-size:9px;color:var(--soft);letter-spacing:.05em;font-family:'Noto Sans JP',sans-serif;white-space:nowrap}
 .step.active .stxt{color:var(--ink)}
 
-/* ===== MAIN ===== */
-.main{width:100%;padding:0 var(--pad) 120px;max-width:var(--max);margin:0 auto}
-.sec-eye{
-  font-family:'Cormorant Garamond',serif;font-style:italic;
-  font-size:11px;letter-spacing:.18em;color:var(--gold);
-  display:block;margin-bottom:6px;
-}
-.sec-ttl{
-  font-family:'Noto Serif JP',serif;font-weight:300;
-  font-size:clamp(22px,5vw,28px);color:var(--ink);
-  margin-bottom:22px;letter-spacing:.04em;
-}
-.screen{display:none}
-.screen.on{display:block}
-#sc1{padding-top:28px}
+/* ── MAIN ── */
+.main{width:100%;padding:0 0 100px;max-width:var(--max);margin:0 auto}
+.screen{display:none}.screen.on{display:block}
 
-.back-btn{
-  display:inline-flex;align-items:center;gap:6px;
-  font-size:11px;letter-spacing:.1em;color:var(--soft);
-  background:none;border:1px solid rgba(184,150,90,.3);
-  border-radius:100px;padding:9px 18px;margin-bottom:20px;
-  transition:all .2s;touch-action:manipulation;min-height:44px;
-  font-family:'Noto Sans JP',sans-serif;
-}
-.back-btn:hover,.back-btn:active{border-color:var(--gold);color:var(--gold)}
+/* ── STEP HEADER ── */
+.sec-wrap{padding:20px var(--pad) 0}
+.sec-step{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:10px;letter-spacing:.18em;color:var(--gold);display:block;margin-bottom:4px}
+.sec-ttl{font-family:'Noto Serif JP',serif;font-weight:300;font-size:clamp(18px,4vw,22px);color:var(--ink);letter-spacing:.04em}
 
-/* ===== TRAINER CARDS ===== */
-.trainer-cards{display:grid;gap:10px;margin-bottom:22px}
-.tc{
-  background:#fff;border:1px solid rgba(184,150,90,.22);
-  border-radius:var(--r);padding:18px 16px;
-  cursor:pointer;touch-action:manipulation;
-  display:flex;align-items:center;gap:14px;
-  transition:all .22s;min-height:78px;width:100%;
-  box-shadow:0 1px 8px rgba(0,0,0,.04);
-  -webkit-appearance:none;text-align:left;
-}
-.tc:hover,.tc:active{border-color:var(--gold);box-shadow:0 4px 20px rgba(184,150,90,.12)}
-.tc.sel{
-  border-color:var(--gold);border-width:1.5px;
-  background:var(--gold-p);box-shadow:0 4px 20px rgba(184,150,90,.18);
-}
-.tc-icon{
-  width:46px;height:46px;border-radius:50%;
-  background:var(--cream);border:1px solid rgba(184,150,90,.25);
-  display:flex;align-items:center;justify-content:center;
-  font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:500;
-  color:var(--gold);flex-shrink:0;transition:all .22s;
-}
-.tc.sel .tc-icon{background:var(--gold);color:#fff;border-color:var(--gold)}
-.tc-name{
-  font-family:'Noto Serif JP',serif;font-weight:400;
-  font-size:clamp(14px,4vw,16px);color:var(--ink);
-}
-.tc-sub{font-size:11px;color:var(--soft);margin-top:3px;font-family:'Noto Sans JP',sans-serif}
-.next-btn{
-  width:100%;padding:18px;background:var(--gold);color:#fff;
-  border:none;border-radius:var(--r);
-  font-family:'Noto Sans JP',sans-serif;
-  font-size:12px;font-weight:500;letter-spacing:.16em;
-  transition:all .22s;touch-action:manipulation;min-height:56px;
-  -webkit-appearance:none;
-}
-.next-btn:hover,.next-btn:active{background:var(--gold-l)}
-.next-btn:disabled{background:rgba(184,150,90,.22);color:var(--soft);cursor:default}
+/* ── 週ナビ ── */
+.week-nav{display:flex;align-items:center;justify-content:space-between;padding:16px var(--pad) 10px;max-width:var(--max);margin:0 auto}
+.week-title{font-family:'Cormorant Garamond',serif;font-size:16px;font-weight:400;color:var(--ink);letter-spacing:.08em}
+.week-btns{display:flex;gap:6px}
+.week-btn{display:flex;align-items:center;gap:4px;font-family:'Noto Sans JP',sans-serif;font-size:10px;color:var(--soft);border:1px solid var(--bd);border-radius:100px;padding:6px 12px;transition:all .2s;min-height:32px}
+.week-btn:hover,.week-btn:active{border-color:var(--gold);color:var(--gold)}
+.week-btn:disabled{opacity:.3;pointer-events:none}
 
-/* ===== DATE BAR ===== */
-.date-bar-wrap{
-  position:sticky;top:60px;z-index:100;
-  background:#fff;border-bottom:1px solid rgba(184,150,90,.14);
-  margin:0 calc(var(--pad) * -1);
-}
-.date-bar{
-  display:flex;overflow-x:auto;-webkit-overflow-scrolling:touch;
-  scrollbar-width:none;padding:0 4px;
-}
-.date-bar::-webkit-scrollbar{display:none}
-.dbtab{
-  flex:1;min-width:calc(100%/7);
-  display:flex;flex-direction:column;align-items:center;
-  padding:11px 2px 9px;
-  border-bottom:2px solid transparent;
-  border-top:none;border-left:none;border-right:none;
-  background:none;cursor:pointer;touch-action:manipulation;
-  transition:all .2s;min-height:64px;-webkit-appearance:none;
-}
-.dbtab:active{background:var(--cream)}
-.dbtab.active{border-bottom-color:var(--gold);background:var(--gold-p)}
-.dbtab-dow{font-family:'Noto Sans JP',sans-serif;font-size:9px;color:var(--soft);font-weight:500;letter-spacing:.04em}
-.dbtab-d{
-  font-family:'Cormorant Garamond',serif;
-  font-size:clamp(20px,5.5vw,24px);font-weight:400;
-  color:var(--ink);line-height:1;margin-top:2px;
-}
-.dbtab.active .dbtab-dow,.dbtab.active .dbtab-d{color:var(--gold)}
-.dbtab.today .dbtab-d{color:var(--teal)}
-.dbtab-dot{width:5px;height:5px;border-radius:50%;margin-top:4px;background:transparent}
-.dbtab.hasslot .dbtab-dot{background:var(--gold)}
+/* ── グリッド ── */
+.grid-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;padding:0 var(--pad)}
+.grid-wrap::-webkit-scrollbar{display:none}
+.grid{border-collapse:collapse;width:100%;min-width:420px}
 
-/* ===== SLOT LIST ===== */
-.slot-area{padding-top:22px}
-.slot-list-header{
-  font-family:'Noto Serif JP',serif;font-weight:300;
-  font-size:clamp(18px,4vw,22px);
-  display:flex;align-items:center;gap:10px;margin-bottom:12px;color:var(--ink);
-}
-.sl-dow{
-  font-family:'Noto Sans JP',sans-serif;font-size:9px;font-weight:500;
-  color:var(--gold);background:var(--gold-p);
-  border:1px solid rgba(184,150,90,.3);
-  padding:3px 10px;border-radius:100px;letter-spacing:.1em;
-}
-.legend{display:flex;gap:18px;margin-bottom:16px}
-.legend-item{display:flex;align-items:center;gap:6px;font-size:11px;color:var(--soft);font-family:'Noto Sans JP',sans-serif}
-.leg-circle{width:22px;height:22px;border-radius:50%;border:1.5px solid var(--gold);display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;color:var(--gold)}
-.leg-cross{width:22px;height:22px;border-radius:50%;border:1.5px solid rgba(0,0,0,.18);display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;color:rgba(0,0,0,.3)}
+/* ヘッダー行（日付） */
+.grid thead th{padding:0;position:sticky;top:56px;z-index:10;background:#fff}
+.grid thead tr{border-bottom:2px solid var(--bd)}
+.th-time{width:52px;min-width:52px;font-size:10px;color:var(--muted);font-family:'Noto Sans JP',sans-serif;padding:10px 8px 10px 0;text-align:right;font-weight:400;vertical-align:bottom;border-right:1px solid rgba(0,0,0,.06)}
+.th-date{text-align:center;padding:8px 4px;cursor:pointer;min-width:52px}
+.th-date-inner{display:flex;flex-direction:column;align-items:center;gap:2px}
+.th-dow{font-family:'Noto Sans JP',sans-serif;font-size:9px;font-weight:500;color:var(--muted)}
+.th-d{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:400;color:var(--ink);line-height:1}
+.th-dot{width:5px;height:5px;border-radius:50%;margin-top:2px;background:transparent}
+.th-date.has-slot .th-dot{background:var(--gold)}
+.th-date.is-today .th-d{color:var(--teal);font-weight:500}
 
-.time-row{display:flex;align-items:stretch;border-bottom:1px solid rgba(0,0,0,.06);min-height:72px}
-.time-row:first-of-type{border-top:1px solid rgba(0,0,0,.06)}
-.tr-label{
-  width:64px;flex-shrink:0;display:flex;align-items:center;
-  padding:0 10px 0 4px;justify-content:flex-end;
-  font-family:'Noto Sans JP',sans-serif;font-size:12px;font-weight:500;
-  color:var(--soft);border-right:2px solid rgba(184,150,90,.25);
-  letter-spacing:.04em;
-}
-.tr-slots{flex:1;display:flex;flex-direction:column;justify-content:center;padding:8px 0 8px 12px;gap:6px}
+/* セル */
+.grid tbody td{padding:3px 4px;text-align:center;vertical-align:middle;min-width:52px}
+.td-time{font-family:'Noto Sans JP',sans-serif;font-size:11px;color:var(--muted);font-weight:400;text-align:right;padding:3px 8px 3px 0;border-right:1px solid rgba(0,0,0,.06);white-space:nowrap}
+.grid tbody tr{border-bottom:1px solid rgba(0,0,0,.04)}
 
-/* 空きスロット（特定トレーナー） */
-.slot-item{
-  display:flex;align-items:center;gap:12px;
-  padding:13px 14px;border-radius:var(--r);
-  cursor:pointer;touch-action:manipulation;
-  transition:all .2s;background:#fff;
-  border:1px solid rgba(184,150,90,.3);width:100%;-webkit-appearance:none;
-  text-align:left;
-}
-.slot-item:active{border-color:var(--gold);background:var(--gold-p)}
-.slot-item.sel{background:var(--gold);border-color:var(--gold)}
-.si-circle{
-  width:32px;height:32px;border-radius:50%;
-  border:1.5px solid var(--gold);display:flex;align-items:center;justify-content:center;
-  flex-shrink:0;font-size:13px;font-weight:700;color:var(--gold);transition:all .2s;
-}
-.slot-item.sel .si-circle{border-color:rgba(255,255,255,.5);background:rgba(255,255,255,.15);color:#fff}
-.si-info{flex:1}
-.si-time{font-family:'Cormorant Garamond',serif;font-size:clamp(20px,5vw,24px);font-weight:400;color:var(--ink);line-height:1}
-.si-end{font-size:11px;color:var(--soft);margin-top:2px;font-family:'Noto Sans JP',sans-serif}
-.slot-item.sel .si-time{color:#fff}
-.slot-item.sel .si-end{color:rgba(255,255,255,.7)}
-.si-arr{font-size:18px;color:var(--gold);flex-shrink:0}
-.slot-item.sel .si-arr{color:rgba(255,255,255,.6)}
+/* ○ボタン */
+.slot-btn{width:40px;height:40px;border-radius:50%;border:1.5px solid var(--gold);background:#fff;color:var(--gold);font-size:15px;font-weight:700;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;transition:all .18s;touch-action:manipulation;font-family:'Noto Sans JP',sans-serif}
+.slot-btn:active,.slot-btn:hover{background:var(--gold);color:#fff;transform:scale(1.08)}
+.slot-btn.sel{background:var(--gold);color:#fff;box-shadow:0 2px 10px rgba(184,150,90,.4)}
 
-/* 空きスロット（トレーナー希望なし） */
-.slot-item-t{
-  display:flex;align-items:center;gap:12px;
-  padding:13px 14px;border-radius:var(--r);
-  cursor:pointer;touch-action:manipulation;
-  transition:all .2s;background:#fff;
-  border:1px solid rgba(184,150,90,.3);width:100%;-webkit-appearance:none;text-align:left;
-}
-.slot-item-t:active{border-color:var(--gold);background:var(--gold-p)}
-.slot-item-t.sel{background:var(--gold);border-color:var(--gold)}
-.sit-icon{
-  width:32px;height:32px;border-radius:50%;
-  border:1.5px solid var(--gold);background:var(--gold-p);
-  display:flex;align-items:center;justify-content:center;
-  font-family:'Cormorant Garamond',serif;font-size:15px;font-weight:500;
-  color:var(--gold);flex-shrink:0;
-}
-.slot-item-t.sel .sit-icon{background:rgba(255,255,255,.2);color:#fff;border-color:rgba(255,255,255,.4)}
-.sit-info{flex:1}
-.sit-name{font-size:clamp(13px,3.5vw,15px);font-weight:500;color:var(--ink);font-family:'Noto Serif JP',serif}
-.sit-time{font-size:11px;color:var(--soft);margin-top:2px;font-family:'Noto Sans JP',sans-serif}
-.slot-item-t.sel .sit-name,.slot-item-t.sel .sit-time{color:#fff}
-.sit-arr{font-size:18px;color:var(--gold);flex-shrink:0}
-.slot-item-t.sel .sit-arr{color:rgba(255,255,255,.6)}
+/* ×表示 */
+.slot-x{width:40px;height:40px;border-radius:50%;border:1px solid rgba(0,0,0,.1);background:var(--cream);color:rgba(0,0,0,.2);font-size:13px;font-weight:700;display:inline-flex;align-items:center;justify-content:center;font-family:'Noto Sans JP',sans-serif}
 
-/* ×埋まり */
-.slot-item-x{
-  display:flex;align-items:center;gap:12px;
-  padding:11px 14px;border-radius:var(--r);
-  background:var(--cream);border:1px solid rgba(0,0,0,.06);
-}
-.six-circle{width:32px;height:32px;border-radius:50%;border:1.5px solid rgba(0,0,0,.15);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:13px;font-weight:700;color:rgba(0,0,0,.25)}
-.six-time{font-family:'Cormorant Garamond',serif;font-size:clamp(18px,4vw,22px);font-weight:400;color:rgba(0,0,0,.22);line-height:1}
-.six-label{font-size:11px;color:rgba(0,0,0,.25);margin-top:2px;font-family:'Noto Sans JP',sans-serif}
-.no-slots-msg{padding:36px 0;text-align:center;color:var(--soft);font-size:13px;font-family:'Noto Sans JP',sans-serif}
+/* 空セル */
+.slot-empty{display:inline-block;width:40px;height:40px}
 
-/* ===== SELECTED INFO ===== */
-.sel-info{background:var(--gold-p);border:1px solid rgba(184,150,90,.35);border-radius:var(--r);padding:16px 18px;margin-bottom:20px}
-.si-eye2{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:10px;color:var(--gold);letter-spacing:.18em;display:block;margin-bottom:5px}
-.si-main2{font-family:'Noto Serif JP',serif;font-weight:400;font-size:15px;color:var(--ink)}
-.si-sub2{font-family:'Noto Sans JP',sans-serif;font-size:11px;color:var(--soft);margin-top:4px}
+.no-slots-row td{padding:24px var(--pad);text-align:center;color:var(--muted);font-size:13px;font-family:'Noto Sans JP',sans-serif}
 
-/* ===== FORM ===== */
-.fcard{background:#fff;border:1px solid rgba(184,150,90,.18);border-radius:var(--r);padding:22px 20px;box-shadow:0 2px 16px rgba(0,0,0,.04)}
-.fgrid{display:grid;grid-template-columns:1fr;gap:16px}
-.fd{display:flex;flex-direction:column;gap:8px}
-.fd.span2{grid-column:1/-1}
-.fd label{font-family:'Noto Sans JP',sans-serif;font-size:10px;color:var(--gold);letter-spacing:.18em;font-weight:500}
-.fd input,.fd textarea{
-  background:var(--cream);border:1px solid rgba(184,150,90,.22);
-  border-radius:var(--r);padding:14px 16px;color:var(--ink);
-  font-size:16px;font-family:'Noto Sans JP',sans-serif;
-  outline:none;-webkit-appearance:none;
-  transition:border-color .2s,background .2s;width:100%;min-height:52px;font-weight:300;
-}
+/* ── 選択情報バー ── */
+.sel-bar{background:var(--gold-p);border-top:1px solid var(--bd);border-bottom:1px solid var(--bd);padding:12px var(--pad);display:none}
+.sel-bar.on{display:flex;align-items:center;justify-content:space-between;gap:12px;max-width:var(--max);margin:0 auto}
+.sel-bar-info{flex:1}
+.sel-bar-label{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:10px;color:var(--gold);letter-spacing:.14em;display:block;margin-bottom:2px}
+.sel-bar-main{font-family:'Noto Serif JP',serif;font-weight:400;font-size:14px;color:var(--ink)}
+.sel-bar-sub{font-family:'Noto Sans JP',sans-serif;font-size:11px;color:var(--soft);margin-top:2px}
+.sel-bar-btn{background:var(--gold);color:#fff;font-family:'Noto Sans JP',sans-serif;font-size:11px;font-weight:500;letter-spacing:.1em;padding:12px 20px;border-radius:var(--r);white-space:nowrap;min-height:44px;transition:background .2s}
+.sel-bar-btn:active,.sel-bar-btn:hover{background:var(--gold-l)}
+
+/* ── STEP3: フォーム ── */
+#sc2{padding:0 var(--pad) 0}
+.back-btn{display:inline-flex;align-items:center;gap:5px;font-size:11px;letter-spacing:.08em;color:var(--soft);border:1px solid var(--bd);border-radius:100px;padding:8px 16px;margin:18px 0 16px;transition:all .2s;min-height:40px;font-family:'Noto Sans JP',sans-serif}
+.back-btn:active,.back-btn:hover{border-color:var(--gold);color:var(--gold)}
+
+.sel-info{background:var(--gold-p);border:1px solid var(--bd);border-radius:var(--r);padding:14px 16px;margin-bottom:18px}
+.si-label{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:10px;color:var(--gold);letter-spacing:.14em;display:block;margin-bottom:4px}
+.si-main{font-family:'Noto Serif JP',serif;font-weight:400;font-size:15px;color:var(--ink)}
+.si-sub{font-family:'Noto Sans JP',sans-serif;font-size:11px;color:var(--soft);margin-top:3px}
+
+.fcard{background:#fff;border:1px solid var(--bd);border-radius:var(--r);padding:20px;box-shadow:0 1px 12px rgba(0,0,0,.04)}
+.fgrid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.fd{display:flex;flex-direction:column;gap:7px}
+.fd.full{grid-column:1/-1}
+.fd label{font-family:'Noto Sans JP',sans-serif;font-size:9px;color:var(--gold);letter-spacing:.18em;font-weight:500;text-transform:uppercase}
+.fd input,.fd textarea{background:var(--cream);border:1px solid var(--bd);border-radius:var(--r);padding:12px 14px;color:var(--ink);font-size:16px;font-family:'Noto Sans JP',sans-serif;outline:none;-webkit-appearance:none;transition:border-color .2s;width:100%;min-height:48px;font-weight:300}
 .fd input:focus,.fd textarea:focus{border-color:var(--gold);background:#fff;box-shadow:0 0 0 3px rgba(184,150,90,.08)}
-.fd input::placeholder,.fd textarea::placeholder{color:rgba(58,50,40,.3)}
-.fd textarea{min-height:80px;resize:none;line-height:1.8}
-.err{background:rgba(180,60,60,.06);border:1px solid rgba(180,60,60,.25);border-radius:var(--r);padding:12px 14px;color:#8b3030;font-size:12px;margin-top:14px;display:none;font-family:'Noto Sans JP',sans-serif}
-.sbtn{
-  margin-top:20px;width:100%;padding:18px;
-  background:var(--gold);color:#fff;border:none;border-radius:var(--r);
-  font-family:'Noto Sans JP',sans-serif;
-  font-size:12px;font-weight:500;letter-spacing:.16em;
-  transition:all .22s;touch-action:manipulation;min-height:56px;-webkit-appearance:none;
-}
-.sbtn:hover,.sbtn:active{background:var(--gold-l)}
+.fd input::placeholder,.fd textarea::placeholder{color:rgba(58,50,40,.28)}
+.fd textarea{min-height:80px;resize:none;line-height:1.75;font-size:14px}
+.note-hint{font-family:'Noto Sans JP',sans-serif;font-size:10px;color:var(--muted);margin-top:4px;line-height:1.6}
+
+.err{background:rgba(180,60,60,.06);border:1px solid rgba(180,60,60,.22);border-radius:var(--r);padding:11px 14px;color:#8b3030;font-size:12px;margin-top:14px;display:none;font-family:'Noto Sans JP',sans-serif}
+.sbtn{margin-top:18px;width:100%;padding:17px;background:var(--gold);color:#fff;border:none;border-radius:var(--r);font-family:'Noto Sans JP',sans-serif;font-size:12px;font-weight:500;letter-spacing:.14em;transition:all .2s;min-height:54px;-webkit-appearance:none}
+.sbtn:active,.sbtn:hover{background:var(--gold-l)}
 .sbtn:disabled{background:rgba(184,150,90,.22);color:var(--soft);cursor:default}
 
-/* ===== SUCCESS ===== */
-.done-wrap{display:none;text-align:center;padding:56px var(--pad) 100px;max-width:var(--max);margin:0 auto}
+/* ── SUCCESS ── */
+.done-wrap{display:none;text-align:center;padding:52px var(--pad) 100px;max-width:var(--max);margin:0 auto}
 .done-wrap.on{display:block}
-.done-ic{width:64px;height:64px;background:var(--teal);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:26px;color:#fff;margin:0 auto 24px}
-.done-ttl{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(32px,8vw,44px);letter-spacing:.08em;margin-bottom:8px;color:var(--ink)}
-.done-sub{font-family:'Noto Sans JP',sans-serif;color:var(--soft);font-size:13px;line-height:2;margin-bottom:24px}
-.done-card{background:#fff;border:1px solid rgba(184,150,90,.2);border-radius:var(--r);padding:20px;margin:0 auto 20px;box-shadow:0 2px 16px rgba(0,0,0,.04);max-width:420px;text-align:left}
-.dr{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;padding:11px 0;border-bottom:1px solid rgba(0,0,0,.06);font-size:14px}
+.done-ic{width:60px;height:60px;background:var(--teal);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:24px;color:#fff;margin:0 auto 20px}
+.done-ttl{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(30px,8vw,40px);letter-spacing:.08em;margin-bottom:8px;color:var(--ink)}
+.done-sub{font-family:'Noto Sans JP',sans-serif;color:var(--soft);font-size:12px;line-height:2;margin-bottom:20px}
+.done-card{background:#fff;border:1px solid var(--bd);border-radius:var(--r);padding:18px;margin:0 auto 16px;box-shadow:0 1px 12px rgba(0,0,0,.04);max-width:380px;text-align:left}
+.dr{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;padding:10px 0;border-bottom:1px solid rgba(0,0,0,.06);font-size:13px}
 .dr:last-child{border-bottom:none}
-.dk{color:var(--soft);flex-shrink:0;font-family:'Noto Sans JP',sans-serif;font-size:11px;letter-spacing:.08em}
+.dk{color:var(--soft);flex-shrink:0;font-family:'Noto Sans JP',sans-serif;font-size:10px;letter-spacing:.08em}
 .dv{font-weight:500;text-align:right;color:var(--ink);font-family:'Noto Serif JP',serif}
-.done-note{max-width:420px;margin:0 auto;background:var(--teal-p);border:1px solid rgba(45,90,90,.18);border-radius:var(--r);padding:14px 16px;font-family:'Noto Sans JP',sans-serif;font-size:12px;color:var(--teal);line-height:1.9}
-.loading{text-align:center;padding:40px 0;color:var(--soft);font-size:13px;font-family:'Noto Sans JP',sans-serif}
+.done-note{max-width:380px;margin:0 auto;background:var(--teal-p);border:1px solid rgba(45,90,90,.16);border-radius:var(--r);padding:13px 15px;font-family:'Noto Sans JP',sans-serif;font-size:11px;color:var(--teal);line-height:1.9}
 
-/* ===== FOOTER ===== */
-.foot{background:var(--ink2);padding:24px var(--pad);text-align:center;border-top:1px solid rgba(184,150,90,.08);margin-top:60px}
-.foot-logo{font-family:'Cormorant Garamond',serif;font-size:15px;color:rgba(255,255,255,.35);letter-spacing:.14em}
-.foot-copy{font-family:'Noto Sans JP',sans-serif;font-size:9px;color:rgba(255,255,255,.16);margin-top:8px;letter-spacing:.06em}
+/* ── FOOTER ── */
+.foot{background:var(--ink);padding:20px var(--pad);text-align:center;border-top:1px solid rgba(184,150,90,.08);margin-top:40px}
+.foot-logo{font-family:'Cormorant Garamond',serif;font-size:14px;color:rgba(255,255,255,.3);letter-spacing:.14em}
+.foot-copy{font-family:'Noto Sans JP',sans-serif;font-size:8px;color:rgba(255,255,255,.14);margin-top:6px;letter-spacing:.06em}
 
-/* ===== RESPONSIVE ===== */
+.loading{text-align:center;padding:36px 0;color:var(--muted);font-size:12px;font-family:'Noto Sans JP',sans-serif}
+
+/* ── レスポンシブ ── */
 @media(min-width:600px){
   .fgrid{grid-template-columns:1fr 1fr}
-  .fd.span2{grid-column:1/-1}
+  .grid-wrap{padding:0 var(--pad)}
+  .th-date,.grid tbody td{min-width:64px}
+  .slot-btn,.slot-x,.slot-empty{width:46px;height:46px}
 }
-@media(max-width:480px){
-  :root{--pad:18px}
-  .hero{padding:28px var(--pad) 24px}
-  .hero h1{font-size:clamp(22px,7vw,30px)}
-  .stxt{font-size:9px}
-  .sdot{width:18px;height:18px;font-size:8px}
-  .step{padding:12px 0 10px}
+@media(max-width:380px){
+  :root{--pad:14px}
+  .th-date,.grid tbody td{min-width:44px}
+  .slot-btn,.slot-x,.slot-empty{width:36px;height:36px;font-size:13px}
+  .th-d{font-size:18px}
 }
 </style>
 </head>
@@ -376,54 +185,80 @@ button{font-family:inherit;cursor:pointer;-webkit-tap-highlight-color:transparen
     <span class="eyebrow">Free Counseling Reservation</span>
     <h1>無料カウンセリング<br><em>ご予約フォーム</em></h1>
     <div class="rule"></div>
-    <p>ご希望のトレーナーと日時をお選びください。<br>初回カウンセリングは完全無料・所要時間は75分です。</p>
+    <p>希望の日時を選んでお申し込みください。初回カウンセリングは完全無料・75分です。</p>
   </div>
 </div>
 
 <!-- STEPS -->
 <div class="steps-outer">
   <div class="steps">
-    <div class="step active" id="step1"><div class="srow"><span class="sdot">1</span><span class="stxt">トレーナー</span></div></div>
-    <div class="step" id="step2"><div class="srow"><span class="sdot">2</span><span class="stxt">日時を選ぶ</span></div></div>
-    <div class="step" id="step3"><div class="srow"><span class="sdot">3</span><span class="stxt">情報を入力</span></div></div>
-    <div class="step" id="step4"><div class="srow"><span class="sdot">4</span><span class="stxt">予約完了</span></div></div>
+    <div class="step active" id="step1"><div class="srow"><span class="sdot">1</span><span class="stxt">日時を選ぶ</span></div></div>
+    <div class="step" id="step2"><div class="srow"><span class="sdot">2</span><span class="stxt">情報を入力</span></div></div>
+    <div class="step" id="step3"><div class="srow"><span class="sdot">3</span><span class="stxt">予約完了</span></div></div>
   </div>
 </div>
 
 <!-- MAIN -->
 <main class="main" id="mainWrap">
 
-  <!-- SC1: トレーナー選択 -->
+  <!-- SC1: 日時選択（週グリッド） -->
   <section class="screen on" id="sc1">
-    <p class="sec-eye">Step 01</p>
-    <h2 class="sec-ttl">トレーナーを選ぶ</h2>
-    <div class="trainer-cards" id="trainerCards"><div class="loading">読み込み中...</div></div>
-    <button class="next-btn" id="nextBtn" onclick="goSlots()" disabled>次へ：日時を選ぶ　›</button>
-  </section>
-
-  <!-- SC2: 日時選択 -->
-  <section class="screen" id="sc2">
-    <div class="date-bar-wrap"><div class="date-bar" id="dateBar"></div></div>
-    <div class="slot-area" id="slotArea"><div class="loading">空き枠を取得しています...</div></div>
-  </section>
-
-  <!-- SC3: お客様情報 -->
-  <section class="screen" id="sc3" style="padding-top:24px">
-    <button class="back-btn" onclick="histBack()">‹ 日時選択に戻る</button>
-    <p class="sec-eye">Step 03</p>
-    <h2 class="sec-ttl">お客様情報を入力</h2>
-    <div class="sel-info">
-      <span class="si-eye2">Selected</span>
-      <p class="si-main2" id="siMain">—</p>
-      <p class="si-sub2"  id="siSub">—</p>
+    <div class="sec-wrap">
+      <span class="sec-step">Step 01</span>
+      <div class="sec-ttl">日時を選ぶ</div>
     </div>
+
+    <!-- 週ナビ -->
+    <div class="week-nav">
+      <div class="week-title" id="weekTitle">読み込み中...</div>
+      <div class="week-btns">
+        <button class="week-btn" id="prevWeekBtn" onclick="shiftWeek(-1)" disabled>‹ 前の週</button>
+        <button class="week-btn" id="nextWeekBtn" onclick="shiftWeek(1)">次の週 ›</button>
+      </div>
+    </div>
+
+    <!-- グリッド -->
+    <div class="grid-wrap">
+      <table class="grid" id="slotGrid">
+        <thead><tr><th class="th-time"></th></tr></thead>
+        <tbody><tr><td colspan="8"><div class="loading">空き枠を取得しています...</div></td></tr></tbody>
+      </table>
+    </div>
+
+    <!-- 選択バー（スロット選択後に表示） -->
+    <div class="sel-bar" id="selBar">
+      <div class="sel-bar-info">
+        <span class="sel-bar-label">Selected</span>
+        <div class="sel-bar-main" id="selBarMain">—</div>
+        <div class="sel-bar-sub" id="selBarSub">—</div>
+      </div>
+      <button class="sel-bar-btn" onclick="goForm()">次へ　›</button>
+    </div>
+  </section>
+
+  <!-- SC2: お客様情報 -->
+  <section class="screen" id="sc2">
+    <button class="back-btn" onclick="histBack()">‹ 日時選択に戻る</button>
+    <span class="sec-step">Step 02</span>
+    <div class="sec-ttl" style="margin-bottom:16px">お客様情報を入力</div>
+
+    <div class="sel-info">
+      <span class="si-label">Selected</span>
+      <p class="si-main" id="siMain">—</p>
+      <p class="si-sub"  id="siSub">—</p>
+    </div>
+
     <div class="fcard">
       <div class="fgrid">
         <div class="fd"><label>お名前</label><input type="text"  id="fN" placeholder="山田 太郎" autocomplete="name"></div>
         <div class="fd"><label>ふりがな</label><input type="text" id="fK" placeholder="やまだ たろう" autocomplete="off"></div>
-        <div class="fd"><label>メールアドレス</label><input type="email" id="fE" placeholder="example@email.com" inputmode="email" autocomplete="email"></div>
-        <div class="fd"><label>電話番号</label><input type="tel" id="fP" placeholder="090-0000-0000" inputmode="tel" autocomplete="tel"></div>
-        <div class="fd span2"><label>ご要望（任意）</label><textarea id="fM" placeholder="例：ダイエット目的 / 腰痛があります など"></textarea></div>
+        <div class="fd full"><label>メールアドレス</label><input type="email" id="fE" placeholder="example@email.com" inputmode="email" autocomplete="email"></div>
+        <div class="fd full"><label>電話番号</label><input type="tel" id="fP" placeholder="090-0000-0000" inputmode="tel" autocomplete="tel"></div>
+        <div class="fd full">
+          <label>備考（任意）</label>
+          <textarea id="fM" placeholder="例：ダイエット目的 / 腰痛があります / 担当トレーナーのご希望など"></textarea>
+          <span class="note-hint">担当トレーナーのご希望がある場合は、こちらにご記入ください。</span>
+        </div>
       </div>
       <div class="err" id="err"></div>
       <button class="sbtn" id="sbtn" onclick="doSubmit()">予約を確定する</button>
@@ -439,12 +274,12 @@ button{font-family:inherit;cursor:pointer;-webkit-tap-highlight-color:transparen
   <p class="done-sub">確認メールをお送りしました。<br>当日スタッフ一同お待ちしております。</p>
   <div class="done-card">
     <div class="dr"><span class="dk">日時</span><span class="dv" id="dDate">—</span></div>
-    <div class="dr"><span class="dk">担当トレーナー</span><span class="dv" id="dTrainer">—</span></div>
     <div class="dr"><span class="dk">所要時間</span><span class="dv">75分（無料）</span></div>
+    <div class="dr"><span class="dk">場所</span><span class="dv">TOKOWAKA 吉祥寺</span></div>
   </div>
   <div class="done-note">
     ご予約の変更・キャンセルはお電話にてお受けします。<br>
-    📞 0422-27-8400（8:00〜23:00）
+    📞 090-8178-9781（8:00〜23:00）
   </div>
 </div>
 
@@ -455,81 +290,231 @@ button{font-family:inherit;cursor:pointer;-webkit-tap-highlight-color:transparen
 </footer>
 
 <script>
-// ========================================================
-// GAS APIのURL（code.gsをデプロイしたURLに変更してください）
-// ========================================================
-var GAS_URL = 'https://script.google.com/macros/s/AKfycbylPva89Yw30HyQSq4GMunGyXuTjwFcpzeONJBdNeglEZ-ef_iJdQrhIrpcGUSwX2ET/exec';
+var GAS_URL   = 'https://script.google.com/macros/s/AKfycbylPva89Yw30HyQSq4GMunGyXuTjwFcpzeONJBdNeglEZ-ef_iJdQrhIrpcGUSwX2ET/exec';
+var DAY       = ['日','月','火','水','木','金','土'];
+var H_START   = 8, H_END = 23, SESSION = 75, INTERVAL = 15;
 
-var DAY      = ['日','月','火','水','木','金','土'];
-var H_START  = 8, H_END = 23;
-var SESSION  = 75;
-var INTERVAL = 15;
-var SHOW_DAYS= 7;
+var allSlots    = [];   // GASから取得した全空き枠
+var selSlot     = null; // 選択中のスロット
+var weekOffset  = 0;    // 何週先を表示中か（0=今週）
+var currentScreen = 'sc1';
 
-var allSlots     = [];
-var selSlot      = null;
-var selTrainerId = 'all';
-var trainers     = [];
-var weekDates    = [];
-var selDateIdx   = 0;
-
-/* ── ウォームアップping（ページ読み込み直後にGASを起動しておく） ── */
-function warmupGAS() {
-  var cbName = '_warmup_' + Date.now();
-  window[cbName] = function() { delete window[cbName]; };
-  var s = document.createElement('script');
-  s.src = GAS_URL + '?action=ping&callback=' + cbName;
-  s.onerror = function() { delete window[cbName]; this.parentNode.removeChild(this); };
-  document.head.appendChild(s);
-}
-
-/* ── GAS API呼び出し（JSONP方式） ── */
+// ── JSONP呼び出し ──
 function gasCall(action, params, onSuccess, onError) {
-  var cbName = '_cb_' + Date.now() + '_' + Math.floor(Math.random()*1000);
+  var cbName = '_cb_' + Date.now() + '_' + Math.floor(Math.random()*9999);
   var qs = 'action=' + encodeURIComponent(action) + '&callback=' + cbName;
-  if (params) {
-    qs += '&params=' + encodeURIComponent(JSON.stringify(params));
-  }
-  var url = GAS_URL + '?' + qs;
-
-  window[cbName] = function(data) {
-    delete window[cbName];
-    var s = document.getElementById('_jsonp_'+cbName);
-    if (s) s.parentNode.removeChild(s);
-    if (data && data.error) { onError && onError(new Error(data.error)); }
-    else { onSuccess && onSuccess(data); }
-  };
-
-  var timer = setTimeout(function() {
-    if (window[cbName]) {
-      delete window[cbName];
-      onError && onError(new Error('タイムアウトしました。通信環境をご確認ください。'));
-    }
+  if (params) qs += '&params=' + encodeURIComponent(JSON.stringify(params));
+  var done = false;
+  var timer = setTimeout(function(){
+    if (!done) { done=true; delete window[cbName]; onError && onError(new Error('タイムアウトしました。通信環境をご確認ください。')); }
   }, 30000);
-
-  window[cbName + '_orig'] = window[cbName];
   window[cbName] = function(data) {
-    clearTimeout(timer);
-    window[cbName + '_orig'](data);
-    delete window[cbName + '_orig'];
-  };
-
-  var script = document.createElement('script');
-  script.id  = '_jsonp_' + cbName;
-  script.src = url;
-  script.onerror = function() {
-    clearTimeout(timer);
+    if (done) return; done=true; clearTimeout(timer);
     delete window[cbName];
-    this.parentNode.removeChild(this);
-    onError && onError(new Error('通信エラーが発生しました。'));
+    var s = document.getElementById('_js_'+cbName);
+    if (s) s.parentNode.removeChild(s);
+    if (data && data.error) onError && onError(new Error(data.error));
+    else onSuccess && onSuccess(data);
+  };
+  var script = document.createElement('script');
+  script.id  = '_js_' + cbName;
+  script.src = GAS_URL + '?' + qs;
+  script.onerror = function() {
+    if (done) return; done=true; clearTimeout(timer);
+    delete window[cbName]; this.parentNode.removeChild(this);
+    onError && onError(new Error('通信エラーが発生しました。しばらくしてから再度お試しください。'));
   };
   document.head.appendChild(script);
 }
 
-/* ── History API ── */
-var currentScreen = 'sc1';
+// ── ウォームアップ ──
+function warmup() {
+  var cb = '_wu_' + Date.now();
+  window[cb] = function(){ delete window[cb]; };
+  var s = document.createElement('script');
+  s.src = GAS_URL + '?action=ping&callback=' + cb;
+  s.onerror = function(){ delete window[cb]; this.parentNode.removeChild(this); };
+  document.head.appendChild(s);
+}
+
+// ── 初期化 ──
+window.addEventListener('load', function() {
+  warmup();
+  history.replaceState({screen:'sc1'}, '', '');
+  loadSlots();
+});
+
+function loadSlots() {
+  document.querySelector('#slotGrid tbody').innerHTML = '<tr><td colspan="8"><div class="loading">空き枠を取得しています...</div></td></tr>';
+  gasCall('getSlots', null,
+    function(data) {
+      allSlots = data || [];
+      renderGrid();
+    },
+    function(e) {
+      document.querySelector('#slotGrid tbody').innerHTML = '<tr class="no-slots-row"><td colspan="8">'+e.message+'　<button onclick="loadSlots()" style="color:var(--gold);text-decoration:underline;background:none;border:none;cursor:pointer;font-size:12px">再読み込み</button></td></tr>';
+    }
+  );
+}
+
+// ── 週の日付配列を生成 ──
+function getWeekDates(offset) {
+  var today = new Date(); today.setHours(0,0,0,0);
+  // offset=0: 今日から7日
+  var start = new Date(today); start.setDate(today.getDate() + offset * 7);
+  var dates = [];
+  for (var i = 0; i < 7; i++) {
+    var d = new Date(start); d.setDate(start.getDate() + i);
+    dates.push(d);
+  }
+  return dates;
+}
+
+function fmtDate(d) { return d.getFullYear()+'/'+(d.getMonth()+1<10?'0':'')+(d.getMonth()+1)+'/'+(d.getDate()<10?'0':'')+d.getDate(); }
+function pad2(n) { return n < 10 ? '0'+n : ''+n; }
+
+// ── グリッド描画 ──
+function renderGrid() {
+  var dates   = getWeekDates(weekOffset);
+  var today   = new Date(); today.setHours(0,0,0,0);
+
+  // 週タイトル
+  var first = dates[0], last = dates[6];
+  document.getElementById('weekTitle').textContent =
+    (first.getMonth()+1) + '月' + first.getDate() + '日 〜 ' +
+    (last.getMonth()+1)  + '月' + last.getDate()  + '日';
+
+  // 前週ボタン：過去には戻れない
+  document.getElementById('prevWeekBtn').disabled = (weekOffset <= 0);
+
+  // 空き枠を日付・時刻でインデックス化
+  var slotMap = {}; // key: "yyyy/MM/dd|HH:mm"
+  for (var i = 0; i < allSlots.length; i++) {
+    var sl = allSlots[i];
+    slotMap[sl.date + '|' + sl.startTime] = sl;
+  }
+
+  // 空き枠がある日付セット
+  var hasSlotDates = {};
+  for (var j = 0; j < allSlots.length; j++) hasSlotDates[allSlots[j].date] = true;
+
+  // ── thead（日付行） ──
+  var thead = '<tr><th class="th-time">時間</th>';
+  for (var di = 0; di < dates.length; di++) {
+    var d   = dates[di];
+    var ds  = fmtDate(d);
+    var cls = 'th-date';
+    if (d.toDateString() === today.toDateString()) cls += ' is-today';
+    if (hasSlotDates[ds]) cls += ' has-slot';
+    thead += '<th class="'+cls+'"><div class="th-date-inner">'
+           + '<span class="th-dow">'+DAY[d.getDay()]+'</span>'
+           + '<span class="th-d">'+d.getDate()+'</span>'
+           + '<span class="th-dot"></span>'
+           + '</div></th>';
+  }
+  thead += '</tr>';
+  document.querySelector('#slotGrid thead').innerHTML = thead;
+
+  // ── tbody（時間スロット行） ──
+  var allTimes = [];
+  for (var hh = H_START; hh < H_END; hh++) {
+    for (var mm = 0; mm < 60; mm += INTERVAL) {
+      if (hh*60 + mm + SESSION > H_END*60) continue;
+      allTimes.push(pad2(hh)+':'+pad2(mm));
+    }
+  }
+
+  var now = new Date();
+  var tbody = '';
+  var hasAnyVisible = false;
+
+  for (var ti = 0; ti < allTimes.length; ti++) {
+    var time = allTimes[ti];
+    var rowHasAny = false;
+
+    // この時刻行に表示すべきセルがあるか確認
+    for (var di2 = 0; di2 < dates.length; di2++) {
+      var slotDt = new Date(dates[di2]);
+      slotDt.setHours(parseInt(time.split(':')[0]), parseInt(time.split(':')[1]), 0, 0);
+      if (slotDt > now) { rowHasAny = true; break; }
+    }
+    if (!rowHasAny) continue;
+
+    hasAnyVisible = true;
+    tbody += '<tr><td class="td-time">'+time+'</td>';
+
+    for (var di3 = 0; di3 < dates.length; di3++) {
+      var d2    = dates[di3];
+      var ds2   = fmtDate(d2);
+      var key   = ds2 + '|' + time;
+      var slotDt2 = new Date(d2);
+      slotDt2.setHours(parseInt(time.split(':')[0]), parseInt(time.split(':')[1]), 0, 0);
+      var isPast = slotDt2 <= now;
+
+      if (isPast) {
+        tbody += '<td><span class="slot-empty"></span></td>';
+      } else {
+        var slot = slotMap[key];
+        if (slot) {
+          var isSel = selSlot && selSlot.startISO === slot.startISO;
+          var idx   = getIdx(slot);
+          tbody += '<td><button class="slot-btn'+(isSel?' sel':'')+'" onclick="pickSlot('+idx+')" aria-label="'+time+'を予約">○</button></td>';
+        } else {
+          tbody += '<td><span class="slot-x">×</span></td>';
+        }
+      }
+    }
+    tbody += '</tr>';
+  }
+
+  if (!hasAnyVisible) {
+    tbody = '<tr class="no-slots-row"><td colspan="8">この週は対応できる枠がありません</td></tr>';
+  }
+
+  document.querySelector('#slotGrid tbody').innerHTML = tbody;
+}
+
+function shiftWeek(dir) {
+  weekOffset += dir;
+  if (weekOffset < 0) weekOffset = 0;
+  renderGrid();
+  window.scrollTo({top:0, behavior:'smooth'});
+}
+
+function getIdx(sl) {
+  for (var i = 0; i < allSlots.length; i++) {
+    if (allSlots[i].startISO === sl.startISO) return i;
+  }
+  return 0;
+}
+
+// ── スロット選択 ──
+function pickSlot(idx) {
+  selSlot = allSlots[idx];
+  renderGrid(); // ○ハイライト更新
+
+  var d = selSlot;
+  document.getElementById('selBarMain').textContent = d.date+'（'+d.dayOfWeek+'）　'+d.startTime+'〜'+d.endTime;
+  document.getElementById('selBarSub').textContent  = '所要時間：75分（無料）';
+  var bar = document.getElementById('selBar');
+  bar.style.display = 'flex';
+  bar.classList.add('on');
+
+  // フォームの選択情報も更新
+  document.getElementById('siMain').textContent = d.date+'（'+d.dayOfWeek+'）　'+d.startTime+'〜'+d.endTime;
+  document.getElementById('siSub').textContent  = '所要時間：75分（無料）';
+}
+
+// ── STEP2へ ──
+function goForm() {
+  if (!selSlot) return;
+  showScreen('sc2');
+  setStep(2);
+}
+
+// ── History API ──
 function showScreen(id, push) {
-  ['sc1','sc2','sc3'].forEach(function(s){
+  ['sc1','sc2'].forEach(function(s){
     var el = document.getElementById(s);
     el.classList.remove('on');
     el.style.display = 'none';
@@ -543,10 +528,9 @@ function showScreen(id, push) {
 }
 window.addEventListener('popstate', function(e) {
   var t = e.state && e.state.screen;
-  if (!t) { history.pushState({screen:currentScreen}, '', ''); return; }
-  if (t === 'sc1') { selSlot=null; selTrainerId='all'; resetTrainerCards(); }
-  if (t === 'sc2') selSlot = null;
-  ['sc1','sc2','sc3'].forEach(function(s){
+  if (!t) { history.pushState({screen:currentScreen},'',''); return; }
+  if (t === 'sc1') selSlot = null;
+  ['sc1','sc2'].forEach(function(s){
     var el = document.getElementById(s);
     el.classList.remove('on');
     el.style.display = 'none';
@@ -555,237 +539,53 @@ window.addEventListener('popstate', function(e) {
   target.classList.add('on');
   target.style.display = 'block';
   currentScreen = t;
-  setStep(['sc1','sc2','sc3'].indexOf(t)+1);
+  setStep(t === 'sc1' ? 1 : 2);
   window.scrollTo({top:0, behavior:'auto'});
 });
 function histBack() { history.back(); }
 
-/* ── 初期化 ── */
-window.addEventListener('load', function() {
-  warmupGAS(); // GASをウォームアップ
-  history.replaceState({screen:'sc1'}, '', '');
-  buildWeekDates();
-  loadTrainers();
-});
-
-function buildWeekDates() {
-  var now = new Date(); now.setHours(0,0,0,0);
-  weekDates = [];
-  for (var i = 0; i < SHOW_DAYS; i++) {
-    var d = new Date(now); d.setDate(now.getDate() + i);
-    weekDates.push(fmtDate(d));
-  }
-}
-function fmtDate(d) {
-  return d.getFullYear() + '/' + pad2(d.getMonth()+1) + '/' + pad2(d.getDate());
-}
-function pad2(n) { return n < 10 ? '0'+n : ''+n; }
-
-/* ── トレーナー読み込み ── */
-function loadTrainers() {
-  gasCall('getTrainers', null,
-    function(data) { trainers = data; renderTrainers(data); },
-    function(e)    { document.getElementById('trainerCards').innerHTML='<div class="loading">エラー：'+e.message+'</div>'; }
-  );
-}
-function renderTrainers(data) {
-  var h = '<button class="tc tc-any" id="tc-all" onclick="pickTrainer(\'all\')">'
-        + '<div class="tc-icon">∗</div>'
-        + '<div><div class="tc-name">トレーナー希望なし</div><div class="tc-sub">空いているトレーナーを自動で割り当て</div></div>'
-        + '</button>';
-  for (var i = 0; i < data.length; i++) {
-    var t = data[i];
-    h += '<button class="tc" id="tc-'+t.id+'" onclick="pickTrainer(\''+t.id+'\')">'
-       + '<div class="tc-icon">'+t.name.charAt(0)+'</div>'
-       + '<div><div class="tc-name">'+t.name+'</div><div class="tc-sub">このトレーナーの空き枠を確認する</div></div>'
-       + '</button>';
-  }
-  document.getElementById('trainerCards').innerHTML = h;
-}
-function resetTrainerCards() {
-  document.getElementById('nextBtn').disabled = true;
-  document.querySelectorAll('.tc').forEach(function(c){ c.classList.remove('sel'); });
-}
-function pickTrainer(id) {
-  selTrainerId = id;
-  document.querySelectorAll('.tc').forEach(function(c){ c.classList.remove('sel'); });
-  var el = document.getElementById('tc-'+id);
-  if (el) el.classList.add('sel');
-  document.getElementById('nextBtn').disabled = false;
-}
-
-/* ── STEP2 ── */
-function goSlots() {
-  showScreen('sc2');
-  setStep(2);
-  allSlots=[]; selSlot=null; selDateIdx=0;
-  document.getElementById('slotArea').innerHTML = '<div class="loading">空き枠を取得しています...</div>';
-  renderDateBar({});
-  gasCall('getAvailableSlots', {trainerId: selTrainerId},
-    function(data) {
-      allSlots = data || [];
-      var slotDateSet = {};
-      for (var i = 0; i < allSlots.length; i++) slotDateSet[allSlots[i].date] = true;
-      renderDateBar(slotDateSet);
-      renderSlotList(0);
-    },
-    function(e) {
-      document.getElementById('slotArea').innerHTML = '<div class="no-slots-msg">エラー：'+e.message+'</div>';
-    }
-  );
-}
-
-/* ── 日付バー ── */
-function renderDateBar(slotDateSet) {
-  var today = new Date(); today.setHours(0,0,0,0);
-  var h = '';
-  for (var i = 0; i < weekDates.length; i++) {
-    var dt = weekDates[i], parts = dt.split('/');
-    var d  = new Date(parseInt(parts[0]), parseInt(parts[1])-1, parseInt(parts[2]));
-    var isToday  = d.toDateString() === today.toDateString();
-    var hasSlot  = !!(slotDateSet && slotDateSet[dt]);
-    var isActive = (i === selDateIdx);
-    var cls = 'dbtab'+(isActive?' active':'')+(isToday?' today':'')+(hasSlot?' hasslot':'');
-    h += '<button class="'+cls+'" onclick="jumpDate('+i+')">';
-    h += '<div class="dbtab-dow">'+DAY[d.getDay()]+'</div>';
-    h += '<div class="dbtab-d">'+d.getDate()+'</div>';
-    h += '<div class="dbtab-dot"></div>';
-    h += '</button>';
-  }
-  document.getElementById('dateBar').innerHTML = h;
-}
-function jumpDate(idx) {
-  selDateIdx = idx;
-  document.querySelectorAll('.dbtab').forEach(function(t,i){ t.classList.toggle('active', i===idx); });
-  renderSlotList(idx);
-  window.scrollTo({top:0, behavior:'smooth'});
-}
-
-/* ── スロットリスト ── */
-function renderSlotList(idx) {
-  var dateStr = weekDates[idx];
-  var parts   = dateStr.split('/');
-  var d       = new Date(parseInt(parts[0]), parseInt(parts[1])-1, parseInt(parts[2]));
-  var dow     = d.getDay();
-  var slotByTime = {};
-  for (var i = 0; i < allSlots.length; i++) {
-    var s = allSlots[i];
-    if (s.date !== dateStr) continue;
-    if (!slotByTime[s.startTime]) slotByTime[s.startTime] = [];
-    slotByTime[s.startTime].push(s);
-  }
-  var allTimes = [];
-  for (var hh = H_START; hh < H_END; hh++) {
-    for (var mm = 0; mm < 60; mm += INTERVAL) {
-      if (hh*60 + mm + SESSION > H_END*60) continue;
-      allTimes.push(pad2(hh)+':'+pad2(mm));
-    }
-  }
-  var html = '';
-  html += '<div class="slot-list-header">'+parseInt(parts[1])+'月'+parseInt(parts[2])+'日<span class="sl-dow">'+DAY[dow]+'</span></div>';
-  html += '<div class="legend"><div class="legend-item"><div class="leg-circle">○</div>空き</div><div class="legend-item"><div class="leg-cross">×</div>埋まり</div></div>';
-  var hasAny = false;
-  for (var ti = 0; ti < allTimes.length; ti++) {
-    var time   = allTimes[ti];
-    var tSlots = slotByTime[time] || [];
-    var hasSlot= tSlots.length > 0;
-    var now2 = new Date();
-    var slotDt = new Date(parseInt(parts[0]), parseInt(parts[1])-1, parseInt(parts[2]));
-    slotDt.setHours(parseInt(time.split(':')[0]), parseInt(time.split(':')[1]), 0, 0);
-    if (slotDt <= now2) continue;
-    hasAny = true;
-    html += '<div class="time-row">';
-    html += '<div class="tr-label">'+time+'</div>';
-    html += '<div class="tr-slots">';
-    if (selTrainerId === 'all') {
-      if (hasSlot) {
-        for (var si2 = 0; si2 < tSlots.length; si2++) {
-          var slot = tSlots[si2], sidx = gIdx(slot);
-          var isSel = selSlot && selSlot.startISO===slot.startISO && selSlot.trainerId===slot.trainerId;
-          html += '<button class="slot-item-t'+(isSel?' sel':'')+'" onclick="pickSlot('+sidx+')">';
-          html += '<div class="sit-icon">'+slot.trainer.charAt(0)+'</div>';
-          html += '<div class="sit-info"><div class="sit-name">'+slot.trainer+'</div><div class="sit-time">〜'+slot.endTime+'</div></div>';
-          html += '<div class="sit-arr">›</div></button>';
-        }
-      } else {
-        html += '<div class="slot-item-x"><div class="six-circle">×</div><div><div class="six-time">'+time+'</div><div class="six-label">満員</div></div></div>';
-      }
-    } else {
-      if (hasSlot) {
-        var slot2 = tSlots[0], sidx2 = gIdx(slot2);
-        var isSel2 = selSlot && selSlot.startISO===slot2.startISO && selSlot.trainerId===slot2.trainerId;
-        html += '<button class="slot-item'+(isSel2?' sel':'')+'" onclick="pickSlot('+sidx2+')">';
-        html += '<div class="si-circle">○</div>';
-        html += '<div class="si-info"><div class="si-time">'+slot2.startTime+'</div><div class="si-end">〜'+slot2.endTime+'</div></div>';
-        html += '<div class="si-arr">›</div></button>';
-      } else {
-        html += '<div class="slot-item-x"><div class="six-circle">×</div><div><div class="six-time">'+time+'</div><div class="six-label">予約済み / 対応不可</div></div></div>';
-      }
-    }
-    html += '</div></div>';
-  }
-  if (!hasAny) html += '<div class="no-slots-msg">この日は対応できる枠がありません</div>';
-  document.getElementById('slotArea').innerHTML = html;
-}
-function gIdx(sl) {
-  for (var i = 0; i < allSlots.length; i++)
-    if (allSlots[i].startISO===sl.startISO && allSlots[i].trainerId===sl.trainerId) return i;
-  return 0;
-}
-
-/* ── スロット選択 ── */
-function pickSlot(idx) {
-  selSlot = allSlots[idx];
-  renderSlotList(selDateIdx);
-  document.getElementById('siMain').textContent = selSlot.date+'（'+selSlot.dayOfWeek+'）　'+selSlot.startTime+'〜'+selSlot.endTime;
-  document.getElementById('siSub').textContent  = '担当：'+selSlot.trainer+'　所要時間：75分（無料）';
-  showScreen('sc3');
-  setStep(3);
-}
-
-/* ── 予約送信 ── */
+// ── 予約送信 ──
 function doSubmit() {
-  var name =document.getElementById('fN').value.trim();
-  var kana =document.getElementById('fK').value.trim();
-  var email=document.getElementById('fE').value.trim();
-  var phone=document.getElementById('fP').value.trim();
-  var note =document.getElementById('fM').value.trim();
-  var eb   =document.getElementById('err');
+  var name  = document.getElementById('fN').value.trim();
+  var kana  = document.getElementById('fK').value.trim();
+  var email = document.getElementById('fE').value.trim();
+  var phone = document.getElementById('fP').value.trim();
+  var note  = document.getElementById('fM').value.trim();
+  var eb    = document.getElementById('err');
+
   if (!name||!email||!phone) { eb.textContent='お名前・メールアドレス・電話番号は必須です。'; eb.style.display='block'; return; }
   if (!selSlot) { eb.textContent='日時を選択してください。'; eb.style.display='block'; return; }
-  eb.style.display='none';
-  var btn=document.getElementById('sbtn'); btn.disabled=true; btn.textContent='送信中...';
+  eb.style.display = 'none';
+
+  var btn = document.getElementById('sbtn'); btn.disabled=true; btn.textContent='送信中...';
+
   gasCall('makeReservation', {
-    customerName:name, customerKana:kana, customerEmail:email,
-    customerPhone:phone, customerNote:note,
-    trainerName:selSlot.trainer, trainerId:selSlot.trainerId,
-    trainerMirrorId:selSlot.trainerMirrorId,
-    trainerEmail:selSlot.trainerEmail,
+    customerName:name, customerKana:kana, customerEmail:email, customerPhone:phone, customerNote:note,
     startISO:selSlot.startISO, endISO:selSlot.endISO
   },
   function(r) {
     if (r && r.success) {
-      document.getElementById('mainWrap').style.display   = 'none';
-      document.querySelector('.hero').style.display       = 'none';
-      document.querySelector('.steps-outer').style.display= 'none';
-      document.getElementById('dDate').textContent    = selSlot.date+'　'+selSlot.startTime+'〜'+selSlot.endTime;
-      document.getElementById('dTrainer').textContent = selSlot.trainer;
+      document.getElementById('mainWrap').style.display = 'none';
+      document.querySelector('.hero').style.display     = 'none';
+      document.querySelector('.steps-outer').style.display = 'none';
+      document.getElementById('dDate').textContent = selSlot.date+'　'+selSlot.startTime+'〜'+selSlot.endTime;
       document.getElementById('doneWrap').classList.add('on');
-      setStep(4); window.scrollTo({top:0,behavior:'smooth'});
+      setStep(3);
+      window.scrollTo({top:0, behavior:'smooth'});
     } else {
-      eb.textContent = (r && r.message) ? r.message : '予約に失敗しました。もう一度お試しください。';
-      eb.style.display='block';
-      btn.disabled=false; btn.textContent='予約を確定する';
+      eb.textContent = (r && r.message) || '予約に失敗しました。もう一度お試しください。';
+      eb.style.display = 'block';
+      btn.disabled = false; btn.textContent = '予約を確定する';
     }
   },
   function(e) {
-    eb.textContent='エラー：'+e.message; eb.style.display='block';
+    eb.textContent = e.message; eb.style.display='block';
     btn.disabled=false; btn.textContent='予約を確定する';
   });
 }
 
 function setStep(n) {
-  for (var i=1;i<=4;i++) {
+  for (var i=1;i<=3;i++) {
     var el=document.getElementById('step'+i);
     el.classList.remove('active','done');
     if (i<n) el.classList.add('done');
